@@ -554,6 +554,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
 Private Sub Combo1_Change()
+On Error Resume Next
 If Len(Combo1.Text) > 0 Then
 Combo1.BackColor = &HC000&
 Else
@@ -570,10 +571,12 @@ End If
 End Sub
 
 Private Sub Combo1_Click()
+On Error Resume Next
 Combo1_Change
 End Sub
 
 Private Sub Command1_Click()
+On Error Resume Next
 Text1.Text = Trim(Text1.Text)
 Text2.Text = Trim(Text2.Text)
 Text3.Text = Trim(Text3.Text)
@@ -658,6 +661,7 @@ Timer1.Enabled = True
 End Sub
 
 Private Sub Command2_Click()
+On Error Resume Next
 Text1.Text = ""
 Text1.SetFocus
 Text2.Text = ""
@@ -687,11 +691,13 @@ Timer1.Enabled = False
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Left = 0
 Me.Top = 0
 End Sub
 
 Private Sub grd1_Click()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim au As Double
@@ -762,22 +768,27 @@ End Sub
 
 
 Private Sub Option1_Click()
+On Error Resume Next
 Command2_Click
 End Sub
 
 Private Sub Option2_Click()
+On Error Resume Next
 Command2_Click
 End Sub
 
 Private Sub Option3_Click()
+On Error Resume Next
 Command2_Click
 End Sub
 
 Private Sub Option4_Click()
+On Error Resume Next
 Command2_Click
 End Sub
 
 Private Sub Text1_Change()
+On Error Resume Next
 If Len(Text1.Text) > 0 Then
 Text1.BackColor = &HC000&
 Else
@@ -787,10 +798,12 @@ End If
 End Sub
 
 Private Sub Text1_Click()
+On Error Resume Next
 Text1_Change
 End Sub
 
 Private Sub Text2_Change()
+On Error Resume Next
 If Len(Text2.Text) > 0 Then
 Text2.BackColor = &HC000&
 Else
@@ -800,10 +813,12 @@ End If
 End Sub
 
 Private Sub Text2_Click()
+On Error Resume Next
 Text2_Change
 End Sub
 
 Private Sub Text2_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 If KeyAscii <> 8 Then
 If KeyAscii = 46 Then
 KeyAscii = 0
@@ -816,6 +831,7 @@ End If
 End Sub
 
 Private Sub Text3_Change()
+On Error Resume Next
 If Len(Text3.Text) > 0 Then
 Text3.BackColor = &HC000&
 Else
@@ -825,10 +841,12 @@ End If
 End Sub
 
 Private Sub Text3_Click()
+On Error Resume Next
 Text3_Change
 End Sub
 
 Private Sub Text3_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 If KeyAscii <> 8 Then
 If KeyAscii = 46 Then
 KeyAscii = 0
@@ -841,6 +859,7 @@ End If
 End Sub
 
 Private Sub Text4_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 If KeyAscii <> 8 Then
 If KeyAscii = 46 Then
 KeyAscii = 0
@@ -853,6 +872,7 @@ End If
 End Sub
 
 Private Sub Text5_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 If KeyAscii <> 8 Then
 If KeyAscii = 46 Then
 KeyAscii = 0
@@ -865,6 +885,7 @@ End If
 End Sub
 
 Private Sub Timer1_Timer()
+On Error Resume Next
 ProgressBar1.Value = ProgressBar1.Value + 8
 If ProgressBar1.Value > 90 Then
 MsgBox " „  «·⁄„·Ì… »‰Ã«Õ", vbInformation + arabic
@@ -873,6 +894,7 @@ End If
 
 End Sub
 Private Sub chargegrd1_1()
+On Error Resume Next
 Dim a As Double
 Dim b As Double
 Dim j As Double
@@ -960,6 +982,7 @@ grd1.Col = 4
 grd1.Sort = 2
 End Sub
 Private Sub chargegrd1_2()
+On Error Resume Next
 Dim a As Double
 Dim b As Double
 Dim j As Double
@@ -1047,6 +1070,7 @@ grd1.Col = 4
 grd1.Sort = 2
 End Sub
 Private Sub chargegrd1_3()
+On Error Resume Next
 Dim a As Double
 Dim b As Double
 Dim j As Double
@@ -1134,6 +1158,7 @@ grd1.Col = 4
 grd1.Sort = 2
 End Sub
 Private Sub chargegrd1_4()
+On Error Resume Next
 Dim a As Double
 Dim b As Double
 Dim j As Double
@@ -1220,4 +1245,5 @@ grd1.Rows = i
 grd1.Col = 4
 grd1.Sort = 2
 End Sub
+
 

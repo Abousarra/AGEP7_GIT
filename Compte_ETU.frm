@@ -684,6 +684,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
 Private Sub Command7_Click()
+On Error Resume Next
 grd1.Visible = False
 grd2.Visible = False
 grd3.Visible = False
@@ -713,11 +714,13 @@ grd3.Visible = True
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Top = 0
 Me.Left = 0
 Call chargcombo1_3_5
 End Sub
 Private Sub chargcombo1_3_5()
+On Error Resume Next
 Combo3.Clear
 Combo5.Clear
 Call cont
@@ -728,6 +731,7 @@ cl.MoveNext
 Loop
 End Sub
 Private Sub chargegrd1_5()
+On Error Resume Next
 Dim i As Double
 Dim h As String
 grd1.Clear
@@ -771,6 +775,7 @@ Label4.Caption = (i - 1)
 'MsgBox h
 End Sub
 Private Sub chargegrd2_5()
+On Error Resume Next
 Dim h As String
 Dim i As Double
 grd2.Clear
@@ -814,6 +819,7 @@ Label5.Caption = (i - 1)
 'MsgBox h
 End Sub
 Private Sub chargegrd1_2()
+On Error Resume Next
 Dim i As Double
 Dim h As String
 grd1.Clear
@@ -857,6 +863,7 @@ Label4.Caption = (i - 1)
 'MsgBox h
 End Sub
 Private Sub chargegrd2_2()
+On Error Resume Next
 Dim h As String
 Dim i As Double
 grd2.Clear
@@ -900,6 +907,7 @@ Label5.Caption = (i - 1)
 'MsgBox h
 End Sub
 Private Sub chargegrd1_3()
+On Error Resume Next
 Dim i As Double
 Dim h As String
 grd1.Clear
@@ -943,6 +951,7 @@ Label4.Caption = (i - 1)
 'MsgBox h
 End Sub
 Private Sub chargegrd2_3()
+On Error Resume Next
 Dim h As String
 Dim i As Double
 grd2.Clear
@@ -986,6 +995,7 @@ Label5.Caption = (i - 1)
 'MsgBox h
 End Sub
 Private Sub chargegrd1_6()
+On Error Resume Next
 Dim i As Double
 Dim h As String
 grd1.Clear
@@ -1029,6 +1039,7 @@ Label4.Caption = (i - 1)
 'MsgBox h
 End Sub
 Private Sub chargegrd2_6()
+On Error Resume Next
 Dim h As String
 Dim i As Double
 grd2.Clear
@@ -1072,6 +1083,7 @@ Label5.Caption = (i - 1)
 'MsgBox h
 End Sub
 Private Sub chargegrd3_T()
+On Error Resume Next
 Dim h As String
 Dim i As Double
 Dim j As Double
@@ -1142,6 +1154,7 @@ Label7.Caption = (q - 1)
 End Sub
 
 Private Sub grd2_Click()
+On Error Resume Next
 Dim i As Double
 Dim n As Double
 Dim m As Double

@@ -1903,6 +1903,7 @@ Private Declare Function InvalidateRect Lib "user32" (ByVal hWnd As Long, lpRect
 '**** right TreeView
 Dim data As New Access.Application
 Private Sub MakeTreeViewRTL()
+On Error Resume Next
 Dim rClientRect As RECT
 Dim ReturnStyle As Long
 ReturnStyle = GetWindowLong(TreeView1.hWnd, GWL_EXSTYLE)
@@ -1915,6 +1916,7 @@ InvalidateRect TreeView1.hWnd, rClientRect, True
 InvalidateRect TreeView2.hWnd, rClientRect, True
 End Sub
 Private Sub couleur_treeview1()
+On Error Resume Next
 Dim lngStyle As Long
 Call SendMessage(TreeView1.hWnd, TVM_SETBKCOLOR, 0, ByVal RGB(250, 247, 13))    'Change the background 'color to red.
 Call SendMessage(TreeView2.hWnd, TVM_SETBKCOLOR, 0, ByVal RGB(250, 247, 13))    'Change the background 'color to red.
@@ -1930,6 +1932,7 @@ TreeView2.Sorted = True
 End Sub
 
 Private Sub chargetreeview1()
+On Error Resume Next
 Dim id1 As String
 Dim id2 As String
 Dim i As Double
@@ -1947,6 +1950,7 @@ cr.MoveNext
 Loop
 End Sub
 Private Sub chargetreeview2()
+On Error Resume Next
 Dim id1 As String
 Dim id2 As String
 Dim i As Double
@@ -1966,6 +1970,7 @@ End Sub
 
 
 Private Sub Combo2_Change()
+On Error Resume Next
 Label7.Caption = "0"
 Label2.Caption = "0"
 Command6.Enabled = False
@@ -1973,6 +1978,7 @@ Call grd2_clear
 Command3_Click
 End Sub
 Private Sub grd2_clear()
+On Error Resume Next
 grd3.Visible = False
 grd3.Clear
 grd3.Cols = 5
@@ -2003,10 +2009,12 @@ grd3.Visible = True
 
 End Sub
 Private Sub Combo2_Click()
+On Error Resume Next
 Combo2_Change
 End Sub
 
 Private Sub Command1_Click()
+On Error Resume Next
 Text1.Text = Trim(Text1.Text)
 If Text1.Text = "" Then
 MsgBox "«·—Ã«¡ «œŒ«· «·—ﬁ„ «· ”·”·Ì ", vbCritical + arabic
@@ -2041,6 +2049,7 @@ Text1.SetFocus
 End Sub
 
 Private Sub Command11_Click()
+On Error Resume Next
 On Error GoTo P
 Dim n1 As Double
 Dim n2 As Double
@@ -2099,6 +2108,7 @@ P:
 End Sub
 
 Private Sub Command2_Click()
+On Error Resume Next
 If Text1.Text = "" Then
 MsgBox "«·—Ã«¡ «œŒ«· «·—ﬁ„ «· ”·”·Ì À„ «·÷€ÿ ⁄·Ï ⁄—÷", vbCritical + arabic
 Text1.SetFocus
@@ -2126,6 +2136,7 @@ End If
 End Sub
 
 Private Sub Command3_Click()
+On Error Resume Next
 Dim i As Double
 Dim k As Double
 Dim P As Double
@@ -2195,6 +2206,7 @@ Label2.Caption = r
 End Sub
 
 Private Sub Command7_Click()
+On Error Resume Next
 Dim x$
 Text4.Text = Trim(Text4.Text)
 If Text4.Text = "" Then
@@ -2260,6 +2272,7 @@ Text1.SetFocus
 End Sub
 
 Private Sub Command8_Click()
+On Error Resume Next
 Dim x$
 x$ = dir$(App.Path & "\" & Interface.SBB1.Panels(1).Text & "\POINTAGES\" & Text4.Text & ".txt")
 If x$ = "" Then
@@ -2272,6 +2285,7 @@ Shell "notepad.exe" & " " & App.Path & "\" & Interface.SBB1.Panels(1).Text & "\P
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Top = 0
 Me.Left = 0
 Call MakeTreeViewRTL
@@ -2281,6 +2295,7 @@ End Sub
 
 
 Private Sub Text2_Change()
+On Error Resume Next
 If Len(Text2.Text) > 0 Then
 Text2.BackColor = &HC000&
 Else
@@ -2290,10 +2305,12 @@ End If
 End Sub
 
 Private Sub Text2_Click()
+On Error Resume Next
 Text2_Change
 End Sub
 
 Private Sub TreeView1_NodeClick(ByVal Node As ComctlLib.Node)
+On Error Resume Next
 Dim n As Double
 Text3.Text = Node.Key
 n = Len(Text3.Text)
@@ -2308,6 +2325,7 @@ End Sub
 
 
 Private Sub TreeView2_NodeClick(ByVal Node As ComctlLib.Node)
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim n As Double
@@ -2322,6 +2340,7 @@ End If
 
 End Sub
 Private Sub chargegrd2_tete()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 grd2.Clear
@@ -2409,6 +2428,7 @@ grd2.Text = "«·„Ã„Ê⁄"
 End Sub
 
 Private Sub chargegrd2_tete_pr()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 grd2.Clear
@@ -2495,6 +2515,7 @@ grd2.Col = 18
 grd2.Text = "«·„Ã„Ê⁄"
 End Sub
 Private Sub chargegrd2()
+On Error Resume Next
 Dim i As Double
 Dim tx1 As String
 Dim tx2 As String
@@ -2545,6 +2566,7 @@ End If
 grd2.Rows = i
 End Sub
 Private Sub coff_dv_ex()
+On Error Resume Next
 Dim n As Double
 Dim i As Double
 Dim j As Double
@@ -2593,6 +2615,7 @@ End If
 Next i
 End Sub
 Private Sub chargegrd2_notes()
+On Error Resume Next
 Dim i As Double
 Dim n As Double
 Dim tx1 As String
@@ -2657,6 +2680,7 @@ Loop
 End Sub
 
 Public Sub calcule_moyenne_lc()
+On Error Resume Next
 Dim d1 As Double
 Dim sd As Double
 Dim nd As Double
@@ -2839,6 +2863,7 @@ Call mention
 End If
 End Sub
 Private Sub bulletin_primaire()
+On Error Resume Next
 'On Error Resume Next
 Dim i As Double
 Dim k As Double
@@ -3085,6 +3110,7 @@ Label38.Caption = te
 
 End Sub
 Private Sub mention()
+On Error Resume Next
 Dim a As Double
 Dim b As Double
 Dim c As Double
@@ -3158,6 +3184,7 @@ Label19.Caption = MF + "   " + MA
 End If
 End Sub
 Private Sub chargegrd4()
+On Error Resume Next
 Dim i As Double
 Dim k As Double
 grd4.Clear
@@ -3212,5 +3239,6 @@ ct.MoveNext
 Loop
 grd4.Rows = i
 End Sub
+
 
 

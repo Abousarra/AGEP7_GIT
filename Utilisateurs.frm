@@ -1430,6 +1430,7 @@ Attribute VB_Exposed = False
 Dim x As Double
 
 Private Sub arc_Click()
+On Error Resume Next
 If arc.Value = 0 Then
 'afn.Value = 0
  'spn.Value = 0
@@ -1444,6 +1445,7 @@ End If
 End Sub
 
 Private Sub cai_Click()
+On Error Resume Next
 If cai.Value = 0 Then
 cpr.Value = 0
  cpf.Value = 0
@@ -1464,6 +1466,7 @@ End If
 End Sub
 
 Private Sub Check1_Click()
+On Error Resume Next
 If Check1.Value = 0 Then
 drp.Value = 0
  les.Value = 0
@@ -1483,6 +1486,7 @@ End If
 End Sub
 
 Private Sub cnt_Click()
+On Error Resume Next
 If cnt.Value = 0 Then
 pet.Value = 0
  ppr.Value = 0
@@ -1497,6 +1501,7 @@ tjr.Value = 1
 End Sub
 
 Private Sub com_Click()
+On Error Resume Next
 If com.Value = 0 Then
 tpr.Value = 0
  tfn.Value = 0
@@ -1530,6 +1535,7 @@ End If
 End Sub
 
 Private Sub Command1_Click()
+On Error Resume Next
 Text1.Text = Trim(Text1.Text)
 Text2.Text = Trim(Text2.Text)
 Text3.Text = Trim(Text3.Text)
@@ -1601,6 +1607,7 @@ Timer1.Enabled = True
 End Sub
 
 Private Sub Command2_Click()
+On Error Resume Next
 Text1.Text = ""
 Text1.SetFocus
 Text2.Text = ""
@@ -1620,10 +1627,12 @@ Timer1.Enabled = False
 End Sub
 
 Private Sub Command3_Click()
+On Error Resume Next
 Unload Me
 End Sub
 
 Private Sub drp_Click()
+On Error Resume Next
 If drp.Value = 0 Then
 dir.Value = 0
  uti.Value = 0
@@ -1652,11 +1661,13 @@ End If
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Top = 0
 Me.Left = 0
 Call chargegrd1
 End Sub
 Private Sub verifier_Checks()
+On Error Resume Next
 x = 0
 x = x + dir.Value
 x = x + uti.Value
@@ -1699,6 +1710,7 @@ x = x + rpn.Value
 x = x + buk.Value
 End Sub
 Private Sub Ses_Options()
+On Error Resume Next
 Dim i As Double
 Dim n As Double
 Call cont
@@ -1890,6 +1902,7 @@ Next i
 End Sub
 
 Private Sub grd1_Click()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim au As Double
@@ -1941,6 +1954,7 @@ End If
 End Sub
 
 Private Sub les_Click()
+On Error Resume Next
 If les.Value = 0 Then
 mat.Value = 0
  note.Value = 0
@@ -1951,6 +1965,7 @@ End If
 End Sub
 
 Private Sub Text1_Change()
+On Error Resume Next
 If Len(Text1.Text) > 0 Then
 Text1.BackColor = &HC000&
 Else
@@ -1960,10 +1975,12 @@ End If
 End Sub
 
 Private Sub Text1_Click()
+On Error Resume Next
 Text1_Change
 End Sub
 
 Private Sub Text2_Change()
+On Error Resume Next
 If Len(Text2.Text) > 0 Then
 Text2.BackColor = &HC000&
 Else
@@ -1973,10 +1990,12 @@ End If
 End Sub
 
 Private Sub Text2_Click()
+On Error Resume Next
 Text2_Change
 End Sub
 
 Private Sub Text3_Change()
+On Error Resume Next
 If Len(Text3.Text) > 0 Then
 Text3.BackColor = &HC000&
 Else
@@ -1986,10 +2005,12 @@ End If
 End Sub
 
 Private Sub Text3_Click()
+On Error Resume Next
 Text3_Change
 End Sub
 
 Private Sub Timer1_Timer()
+On Error Resume Next
 ProgressBar1.Value = ProgressBar1.Value + 8
 If ProgressBar1.Value > 90 Then
 MsgBox " „  «·⁄„·Ì… »‰Ã«Õ", vbInformation + arabic
@@ -1998,6 +2019,7 @@ End If
 
 End Sub
 Private Sub chargegrd1()
+On Error Resume Next
 Dim j As Double
 Dim i As Double
 Dim P As Double
@@ -2040,6 +2062,7 @@ grd1.Col = 1
 grd1.Sort = 1
 End Sub
 Private Sub rec_options()
+On Error Resume Next
 Call cont
 Do While Not ou.EOF
 If Text1.Text = ou!nom Then

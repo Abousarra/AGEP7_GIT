@@ -346,7 +346,7 @@ Begin VB.Form Compte_PRF
             _ExtentX        =   2566
             _ExtentY        =   661
             _Version        =   393216
-            Format          =   33030145
+            Format          =   124977153
             CurrentDate     =   43029
          End
          Begin VB.TextBox Text3 
@@ -1308,6 +1308,7 @@ Private Declare Function InvalidateRect Lib "user32" (ByVal hWnd As Long, lpRect
 '**** right TreeView
 Dim data As New Access.Application
 Private Sub MakeTreeViewRTL()
+On Error Resume Next
 Dim rClientRect As RECT
 Dim ReturnStyle As Long
 ReturnStyle = GetWindowLong(TreeView1.hWnd, GWL_EXSTYLE)
@@ -1316,6 +1317,7 @@ GetClientRect TreeView1.hWnd, rClientRect
 InvalidateRect TreeView1.hWnd, rClientRect, True
 End Sub
 Private Sub couleur_treeview1()
+On Error Resume Next
 Dim lngStyle As Long
 Call SendMessage(TreeView1.hWnd, TVM_SETBKCOLOR, 0, ByVal RGB(250, 247, 13))    'Change the background 'color to red.
     ' Now reset the style so that the tree lines appear properly
@@ -1326,6 +1328,7 @@ TreeView1.Sorted = True
 End Sub
 
 Private Sub chargetreeview1()
+On Error Resume Next
 Dim id1 As String
 Dim id2 As String
 Dim i As Double
@@ -1345,15 +1348,18 @@ Loop
 End Sub
 
 Private Sub Combo1_Change()
+On Error Resume Next
 Call chargegrd_clear
 
 End Sub
 
 Private Sub Combo1_Click()
+On Error Resume Next
 Combo1_Change
 End Sub
 
 Private Sub Command1_Click()
+On Error Resume Next
 Text1.Text = Trim(Text1.Text)
 If Text1.Text = "" Then
 MsgBox "ÇáÑÌÇÁ ÇÏÎÇá ÇáÑÞã ÇáÊÓáÓáí ", vbCritical + arabic
@@ -1393,6 +1399,7 @@ Text1.SetFocus
 End Sub
 
 Private Sub Command10_Click()
+On Error Resume Next
 Dim e As Double
 If Option1.Value = False And Option2.Value = False Then
 MsgBox "íÌÈ ÊÍÏíÏ ÃÍÏ ÇáÎíÇÑÇÊ Úáì Çáíãíä", vbCritical
@@ -1436,6 +1443,7 @@ Command10.Enabled = True
 End Sub
 
 Private Sub Command2_Click()
+On Error Resume Next
 Text1.Text = Trim(Text1.Text)
 If Text1.Text = "" Then
 MsgBox "ÇáÑÌÇÁ ÇÏÎÇá ÇáÑÞã ÇáÊÓáÓáí Ëã ÇáÖÛØ Úáì ÚÑÖ", vbCritical + arabic
@@ -1462,6 +1470,7 @@ End If
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Left = 0
 Me.Top = 0
 Call MakeTreeViewRTL
@@ -1469,6 +1478,7 @@ Call chargetreeview1
 Call couleur_treeview1
 End Sub
 Private Sub chargegrd3_T()
+On Error Resume Next
 Dim i As Double
 Dim e As Double
 Dim P As Double
@@ -1533,6 +1543,7 @@ grd3.Rows = i
 'grd3.Sort = 2
 End Sub
 Private Sub chargegrd3_M()
+On Error Resume Next
 Dim i As Double
 Dim e As Double
 Dim P As Double
@@ -1599,6 +1610,7 @@ grd3.Rows = i
 'grd3.Sort = 2
 End Sub
 Private Sub chargegrd4_5_T()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim e As Double
@@ -1653,6 +1665,7 @@ e = (s + ss) - se
 Label17.Caption = e
 End Sub
 Private Sub chargegrd4_5_M()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim e As Double
@@ -1713,17 +1726,20 @@ Label17.Caption = e
 End Sub
 
 Private Sub Option1_Click()
+On Error Resume Next
 Combo1.Visible = True
 Call chargegrd_clear
 
 End Sub
 
 Private Sub Option2_Click()
+On Error Resume Next
 Combo1.Visible = False
 Call chargegrd_clear
 End Sub
 
 Private Sub Text1_Change()
+On Error Resume Next
 If Len(Text1.Text) > 0 Then
 Text1.BackColor = &HC000&
 Else
@@ -1733,10 +1749,12 @@ Label24.Caption = ""
 End Sub
 
 Private Sub Text1_Click()
+On Error Resume Next
 Text1_Change
 End Sub
 
 Private Sub Text2_Change()
+On Error Resume Next
 If Len(Text2.Text) > 0 Then
 Text2.BackColor = &HC000&
 Else
@@ -1746,10 +1764,12 @@ End If
 End Sub
 
 Private Sub Text2_Click()
+On Error Resume Next
 Text2_Change
 End Sub
 
 Private Sub TreeView1_NodeClick(ByVal Node As ComctlLib.Node)
+On Error Resume Next
 Dim n As Double
 Text3.Text = Node.Key
 n = Len(Text3.Text)
@@ -1762,6 +1782,7 @@ End If
 
 End Sub
 Private Sub chargegrd_clear()
+On Error Resume Next
 Label20.Caption = "0"
 Label8.Caption = "0"
 Label10.Caption = "0"
@@ -1919,6 +1940,7 @@ End Sub
 
 
 Private Sub chargegrd1_2_res3_T()
+On Error Resume Next
 Dim n As Double
 Dim i As Double
 Dim m1 As Double
@@ -2035,6 +2057,7 @@ Label10.Caption = tsp
 Label13.Caption = (sh + sm + tsp)
 End Sub
 Private Sub chargegrd1_2_res3_M()
+On Error Resume Next
 Dim n As Double
 Dim i As Double
 Dim m1 As Double

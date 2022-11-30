@@ -176,7 +176,7 @@ Begin VB.Form Compte_ARC
       CalendarBackColor=   16744576
       CalendarTitleBackColor=   16711680
       CalendarTrailingForeColor=   16744576
-      Format          =   104398849
+      Format          =   124977153
       CurrentDate     =   42638
    End
    Begin MSFlexGridLib.MSFlexGrid grd1 
@@ -284,6 +284,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub chargegrd1_D()
+On Error Resume Next
 Dim i As Double
 Dim dat1 As Date
 Dim dat2 As Date
@@ -356,19 +357,23 @@ Private Sub Combo1_Change()
 End Sub
 
 Private Sub Combo1_Click()
+On Error Resume Next
 Combo1_Change
 End Sub
 
 Private Sub Combo3_Change()
+On Error Resume Next
 'Call grds_clear
 
 End Sub
 
 Private Sub Combo3_Click()
+On Error Resume Next
 Combo3_Change
 End Sub
 
 Private Sub Command7_Click()
+On Error Resume Next
 If Combo3.Text = "" Then
 MsgBox "Ì—ÃÏ  ÕœÌœ ‰Ê⁄ «·”Ã·", vbCritical
 Exit Sub
@@ -401,12 +406,14 @@ Command7.Enabled = True
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Left = 0
 Me.Top = 0
 DT1.Value = Date
 End Sub
 
 Private Sub Option1_Click()
+On Error Resume Next
 DT1.Visible = True
 Combo1.Visible = False
 'Call grds_clear
@@ -414,6 +421,7 @@ Combo1.Visible = False
 End Sub
 
 Private Sub Option2_Click()
+On Error Resume Next
 'Call grds_clear
 DT1.Visible = False
 Combo1.Visible = True
@@ -422,6 +430,7 @@ Combo1.Visible = True
 End Sub
 
 Private Sub Option3_Click()
+On Error Resume Next
 'Call grds_clear
 DT1.Visible = False
 Combo1.Visible = False

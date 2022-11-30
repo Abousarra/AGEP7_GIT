@@ -385,6 +385,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
 Private Sub Combo1_Change()
+On Error Resume Next
 If Len(Combo1.Text) > 0 Then
 Combo1.BackColor = &HC000&
 Call chargcombo3
@@ -404,10 +405,12 @@ End If
 End Sub
 
 Private Sub Combo1_Click()
+On Error Resume Next
 Combo1_Change
 End Sub
 
 Private Sub Combo2_Change()
+On Error Resume Next
 If Len(Combo2.Text) > 0 Then
 Combo2.BackColor = &HC000&
 Call chargcombo1
@@ -424,10 +427,12 @@ End If
 End Sub
 
 Private Sub Combo2_Click()
+On Error Resume Next
 Combo2_Change
 End Sub
 
 Private Sub Combo3_Change()
+On Error Resume Next
 If Len(Combo3.Text) > 0 Then
 Combo3.BackColor = &HC000&
 Else
@@ -436,16 +441,19 @@ End If
 End Sub
 
 Private Sub Combo3_Click()
+On Error Resume Next
 Combo3_Change
 End Sub
 
 Private Sub Command1_Click()
+On Error Resume Next
 grd2.Visible = False
 Call calcule_moyenne_lc
 grd2.Visible = True
 End Sub
 
 Private Sub Command12_Click()
+On Error Resume Next
 Command12.Enabled = False
 If Combo2.Text = "«» œ«∆Ì" Then
 Call rangs_P
@@ -457,6 +465,7 @@ Command12.Enabled = True
 End Sub
 
 Private Sub Command5_Click()
+On Error Resume Next
 Call cont
 Do While Not mt.EOF
 If mt!mat = Combo3.Text Then
@@ -481,6 +490,7 @@ Loop
 End Sub
 
 Private Sub Command8_Click()
+On Error Resume Next
 Dim i As Double
 Dim n As Double
 If Combo2.Text = "" Or Combo1.Text = "" Or Combo3.Text = "" Then
@@ -576,6 +586,7 @@ MsgBox " „ Õ›Ÿ «·»Ì« « ", vbInformation
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Left = 0
 Me.Top = 480
 Call chargegrd2_tete
@@ -583,6 +594,7 @@ Call chargegrd2_tete
 'Text1.SetFocus
 End Sub
 Private Sub chargcombo1()
+On Error Resume Next
 Combo1.Clear
 Call cont
 Do While Not cl.EOF
@@ -593,6 +605,7 @@ cl.MoveNext
 Loop
 End Sub
 Private Sub chargcombo3()
+On Error Resume Next
 Combo3.Clear
 Call cont
 Do While Not mt.EOF
@@ -603,6 +616,7 @@ mt.MoveNext
 Loop
 End Sub
 Private Sub chargegrd2_tete()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 grd2.Clear
@@ -690,6 +704,7 @@ grd2.Col = 18
 grd2.Text = "«·„Ã„Ê⁄"
 End Sub
 Private Sub chargegrd2_tete_pr()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 grd2.Clear
@@ -777,6 +792,7 @@ grd2.Col = 18
 grd2.Text = "«·„Ã„Ê⁄"
 End Sub
 Private Sub chargegrd2()
+On Error Resume Next
 Dim i As Double
 i = 1
 Call cont
@@ -803,6 +819,7 @@ Loop
 grd2.Rows = i
 End Sub
 Private Sub chargegrd2_notes()
+On Error Resume Next
 Dim i As Double
 Dim n As Double
 Dim tx1 As String
@@ -851,6 +868,7 @@ nt.MoveNext
 Loop
 End Sub
 Private Sub coff_dv_ex()
+On Error Resume Next
 Dim n As Double
 Dim i As Double
 Dim j As Double
@@ -889,6 +907,7 @@ Next i
 End Sub
 
 Private Sub grd2_Click()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 i = grd2.Row
@@ -902,6 +921,7 @@ End If
 End Sub
 
 Private Sub grd2_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim n As Double
@@ -992,6 +1012,7 @@ End If
 End Sub
 
 Public Sub calcule_moyenne_lc()
+On Error Resume Next
 Dim d1 As Double
 Dim sd As Double
 Dim nd As Double
@@ -1231,3 +1252,4 @@ Exit Sub
 P:
 Exit Sub
 End Sub
+

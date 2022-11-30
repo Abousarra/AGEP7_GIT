@@ -705,6 +705,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim data As New Access.Application
 Private Sub chargcombo1()
+On Error Resume Next
 Combo1.Clear
 Call cont
 Do While Not cl.EOF
@@ -714,6 +715,7 @@ Loop
 End Sub
 
 Private Sub Combo1_Change()
+On Error Resume Next
 If Len(Combo1.Text) > 0 Then
 Combo1.BackColor = &HC000&
 Else
@@ -730,11 +732,13 @@ Loop
 End Sub
 
 Private Sub Combo1_Click()
+On Error Resume Next
 Combo1_Change
 End Sub
 
 
 Private Sub Command2_Click()
+On Error Resume Next
 Dim a As Double
 a = Val(Label5.Caption)
 Call cont
@@ -752,6 +756,7 @@ Set data = Nothing
 End Sub
 
 Private Sub Command3_Click()
+On Error Resume Next
 Dim a As Double
 a = Val(Label5.Caption)
 Call cont
@@ -769,6 +774,7 @@ Set data = Nothing
 End Sub
 
 Private Sub Command4_Click()
+On Error Resume Next
 Dim a As Double
 a = Val(Label5.Caption)
 Call cont
@@ -786,6 +792,7 @@ Set data = Nothing
 End Sub
 
 Private Sub Command5_Click()
+On Error Resume Next
 Dim x$
 Call cont
 Do While Not et.EOF
@@ -815,6 +822,7 @@ Loop
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Left = 0
 Me.Top = 0
 Call cont
@@ -823,6 +831,7 @@ Call chargcombo1
 End Sub
 
 Private Sub Text1_Change()
+On Error Resume Next
 If Len(Text1.Text) > 0 Then
 Text1.BackColor = &HC000&
 Else
@@ -832,10 +841,12 @@ End If
 End Sub
 
 Private Sub Text1_Click()
+On Error Resume Next
 Text1_Change
 End Sub
 
 Private Sub Text1_KeyUp(KeyCode As Integer, Shift As Integer)
+On Error Resume Next
 If Text1.Text <> "" Then
 If KeyCode = 13 Then
 Command5_Click

@@ -156,10 +156,12 @@ Text1.SetFocus
 End Sub
 
 Private Sub Combo1_Click()
+On Error Resume Next
 Combo1_Change
 End Sub
 
 Private Sub Command1_Click()
+On Error Resume Next
 If Combo1.Text = "" Or Text1.Text = "" Then
 MsgBox " ›÷·Ê« »«Œ Ì«— «”„ «·„” Œœ„ Ê«œŒ«· ﬂ·„… «·”—", vbCritical
 Exit Sub
@@ -183,11 +185,13 @@ Text1.SetFocus
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Top = 0
 Me.Left = 0
 Call chargcombo1
 End Sub
 Private Sub chargcombo1()
+On Error Resume Next
 Combo1.Clear
 Call cont
 Do While Not ut.EOF

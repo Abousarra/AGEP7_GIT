@@ -672,6 +672,7 @@ Private Type SECURITY_ATTRIBUTES
     bInheritHandle As Long
 End Type
 Function conn()
+On Error Resume Next
 Set coo = New ADODB.Connection
 Set nn = New ADODB.Recordset
 coo.Provider = "microsoft.jet.oledb.4.0; jet oledb:database password=7346804"
@@ -680,6 +681,7 @@ coo.Open
 nn.Open "select*from Tannees", coo, adOpenKeyset, adLockOptimistic
 End Function
 Function connn()
+On Error Resume Next
 Set cooo = New ADODB.Connection
 Set anb = New ADODB.Recordset
 cooo.Provider = "microsoft.jet.oledb.4.0; jet oledb:database password=7346804"
@@ -688,6 +690,7 @@ cooo.Open
 anb.Open "select*from Etablissement", cooo, adOpenKeyset, adLockOptimistic
 End Function
 Private Sub bases()
+On Error Resume Next
 Dim result As Long, fileop As SHFILEOPSTRUCT
 With fileop
         .hWnd = Me.hWnd
@@ -701,6 +704,7 @@ result = SHFileOperation(fileop)
 MsgBox "OpÈration est effectuÈe avec succÈs", vbInformation
 End Sub
 Private Sub chargcombo1()
+On Error Resume Next
 Combo1.Clear
 Call cont
 Do While Not an.EOF
@@ -709,6 +713,7 @@ an.MoveNext
 Loop
 End Sub
 Private Sub chargcombo3()
+On Error Resume Next
 Combo3.Clear
 Call conn
 Do While Not nn.EOF
@@ -720,6 +725,7 @@ Loop
 End Sub
 
 Private Sub Combo1_Change()
+On Error Resume Next
 If Len(Combo1.Text) > 0 Then
 Combo1.BackColor = &HC000&
 Else
@@ -729,10 +735,12 @@ End If
 End Sub
 
 Private Sub Combo1_Click()
+On Error Resume Next
 Combo1_Change
 End Sub
 
 Private Sub Combo2_Change()
+On Error Resume Next
 Dim i As Double
 i = Combo2.Text
 i = (i * 60)
@@ -740,10 +748,12 @@ Label8.Caption = i
 End Sub
 
 Private Sub Combo2_Click()
+On Error Resume Next
 Combo2_Change
 End Sub
 
 Private Sub Command1_Click()
+On Error Resume Next
 'On Error GoTo p
 Dim result As Long, fileop As SHFILEOPSTRUCT
 CommonDialog1.CancelError = True
@@ -789,6 +799,7 @@ MsgBox "Erreur de souvegarder", vbExclamation
 End Sub
 
 Private Sub Command2_Click()
+On Error Resume Next
 'On Error GoTo p
 Text1.Text = Drive1.Drive & Interface.Caption
 Text = Text1.Text
@@ -801,6 +812,7 @@ MsgBox "Êﬁ⁄ Œÿ√ «À‰«¡ «⁄«œ… «·‰”Œ «·«Õ Ì«ÿÌ —»„« ÌﬂÊ‰ «·„”«— Œÿ√, «·—Ã«¡ «⁄«œ… «
 End Sub
 
 Private Sub Command3_Click()
+On Error Resume Next
 grd1.Visible = False
 grd2.Visible = False
 grd3.Visible = False
@@ -814,6 +826,7 @@ grd3.Visible = True
 End Sub
 
 Private Sub Command4_Click()
+On Error Resume Next
 Dim result As Long, fileop As SHFILEOPSTRUCT
 Dim Security As SECURITY_ATTRIBUTES
 Dim x$
@@ -879,6 +892,7 @@ End Sub
 
 
 Private Sub Command5_Click()
+On Error Resume Next
 Call cont
 eb!act = "0"
 eb.Update
@@ -886,6 +900,7 @@ Interface.Timer1.Enabled = False
 End Sub
 
 Private Sub Command6_Click()
+On Error Resume Next
 Call conn
 Do While Not nn.EOF
 If nn!ann = Combo3.Text Then
@@ -918,6 +933,7 @@ Loop
 End Sub
 
 Private Sub Command9_Click()
+On Error Resume Next
 Dim tx1 As String
 Dim tx2 As String
 Dim tx3 As String
@@ -998,6 +1014,7 @@ Start_UP.Show
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Dim j As Double
 Me.Top = 0
 Me.Left = 0
@@ -1014,6 +1031,7 @@ End Sub
 
 
 Private Sub chargegrd1_5()
+On Error Resume Next
 Dim h As String
 Dim i As Double
 Dim j As Double
@@ -1064,6 +1082,7 @@ h = (i - 1)
 MsgBox "1 ---- " + h
 End Sub
 Private Sub chargegrd2_5()
+On Error Resume Next
 Dim h As String
 Dim i As Double
 Dim j As Double
@@ -1114,6 +1133,7 @@ h = (i - 1)
 MsgBox "2 ---- " + h
 End Sub
 Private Sub chargegrd3_T()
+On Error Resume Next
 Dim h As String
 Dim i As Double
 Dim j As Double

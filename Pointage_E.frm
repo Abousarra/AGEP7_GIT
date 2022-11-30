@@ -151,7 +151,7 @@ Begin VB.Form Pointage_E
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   102825985
+         Format          =   124977153
          CurrentDate     =   41924
       End
       Begin MSComCtl2.DTPicker DT3 
@@ -172,7 +172,7 @@ Begin VB.Form Pointage_E
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   102825985
+         Format          =   124977153
          CurrentDate     =   41924
       End
       Begin VB.Label Label15 
@@ -406,7 +406,7 @@ Begin VB.Form Pointage_E
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   102825985
+         Format          =   124977153
          CurrentDate     =   41924
       End
       Begin VB.Shape Shape2 
@@ -944,6 +944,7 @@ Private Type SECURITY_ATTRIBUTES
 End Type
 Dim data As New Access.Application
 Private Function NumFiles(sPath As String) As Long
+On Error Resume Next
 Dim f As WIN32_FIND_DATA
 Dim hFile As Long
 NumFiles = 0
@@ -960,6 +961,7 @@ FindClose (hFile)
 End Function
 Function StripPath(t$) As String
 On Error Resume Next
+On Error Resume Next
 Dim x%, ct%
 StripPath$ = t$
 x% = InStr(t$, "\")
@@ -971,6 +973,7 @@ If ct% > 0 Then StripPath$ = Mid$(t$, ct% + 1)
 End Function
 
 Private Sub Check1_Click()
+On Error Resume Next
 grd1.Visible = False
 Call chargegrd1
 grd1.Visible = True
@@ -982,6 +985,7 @@ End If
 End Sub
 
 Private Sub Command1_Click()
+On Error Resume Next
 Dim noms As String
 Dim sers As String
 Dim clas As String
@@ -1008,6 +1012,7 @@ End Sub
 
 
 Private Sub Command10_Click()
+On Error Resume Next
 Dim n1 As Double
 Dim n2 As Double
 Dim k1 As Double
@@ -1067,6 +1072,7 @@ s = 0
 End Sub
 
 Private Sub Command11_Click()
+On Error Resume Next
 Open App.Path & "\" & Interface.SBB1.Panels(1).Text & "\POINTAGES\" & Combo1.Text & ".txt" For Input As #1
 Do While Not EOF(1)
 myChar = Input(2, #1) 'one char a line
@@ -1077,6 +1083,7 @@ MsgBox WholeWord
 End Sub
 
 Private Sub Command12_Click()
+On Error Resume Next
 DT2.Value = Date
 For i = 1 To 500
 DT2.Value = DT2.Value + 1
@@ -1089,6 +1096,7 @@ MsgBox "ok", vbInformation
 End Sub
 
 Private Sub Command13_Click()
+On Error Resume Next
 g = MsgBox("Â·  —Ìœ Õﬁ« €·ﬁ »«» «·Õ÷Ê— ·Â–« «·ÌÊ„ø", vbInformation + vbYesNo + arabic, "AGEP7")
 If g = vbYes Then
 Call cont
@@ -1105,6 +1113,7 @@ End If
 End Sub
 
 Private Sub Command2_Click()
+On Error Resume Next
 Dim x$
 x$ = dir$(App.Path & "\" & Interface.SBB1.Panels(1).Text & "\POINTAGES\" & BX1.Caption & ".txt")
 If x$ = "" Then
@@ -1115,12 +1124,14 @@ Shell "notepad.exe" & " " & App.Path & "\" & Interface.SBB1.Panels(1).Text & "\P
 End Sub
 
 Private Sub Command3_Click()
+On Error Resume Next
 Dim d As String
 d = NumFiles(App.Path & "\IMAGES\1AF")
 MsgBox d
 End Sub
 
 Private Sub Command4_Click()
+On Error Resume Next
 Dim x$
 x$ = dir$(App.Path & "\" & Interface.SBB1.Panels(1).Text & "\POINTAGES\" & DT2.Day & DT2.Month & DT2.Year & Combo1.Text & ".txt")
 If x$ = "" Then
@@ -1131,6 +1142,7 @@ Shell "notepad.exe" & " " & App.Path & "\" & Interface.SBB1.Panels(1).Text & "\P
 End Sub
 
 Private Sub Command5_Click()
+On Error Resume Next
 Dim x$
 x$ = dir$(App.Path & "\" & Interface.SBB1.Panels(1).Text & "\POINTAGES\N" & DT2.Day & DT2.Month & DT2.Year & ".txt")
 If x$ = "" Then
@@ -1142,6 +1154,7 @@ Shell "notepad.exe" & " " & App.Path & "\" & Interface.SBB1.Panels(1).Text & "\P
 End Sub
 
 Private Sub Command6_Click()
+On Error Resume Next
 Dim x$
 x$ = dir$(App.Path & "\" & Interface.SBB1.Panels(1).Text & "\POINTAGES\C" & DT2.Day & DT2.Month & DT2.Year & ".txt")
 If x$ = "" Then
@@ -1152,6 +1165,7 @@ Shell "notepad.exe" & " " & App.Path & "\" & Interface.SBB1.Panels(1).Text & "\P
 End Sub
 
 Private Sub Command7_Click()
+On Error Resume Next
 Dim dat1 As Date
 Dim dat2 As Date
 Dim j As Double
@@ -1276,6 +1290,7 @@ Text1.SetFocus
 End Sub
 
 Private Sub Command8_Click()
+On Error Resume Next
 Dim x$
 '*** verif n s
 vtx1 = Text2.Text
@@ -1292,6 +1307,7 @@ Shell "notepad.exe" & " " & App.Path & "\" & Interface.SBB1.Panels(1).Text & "\P
 End Sub
 
 Private Sub Command9_Click()
+On Error Resume Next
 Dim x$
 x$ = dir$(App.Path & "\" & Interface.SBB1.Panels(1).Text & "\POINTAGES\" & Combo1.Text & ".txt")
 If x$ = "" Then
@@ -1303,6 +1319,7 @@ Shell "notepad.exe" & " " & App.Path & "\" & Interface.SBB1.Panels(1).Text & "\P
 End Sub
 
 Private Sub DT1_Change()
+On Error Resume Next
 grd1.Visible = False
 Call chargegrd1
 grd1.Visible = True
@@ -1310,10 +1327,12 @@ grd1.Visible = True
 End Sub
 
 Private Sub DT1_Click()
+On Error Resume Next
 DT1_Change
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Dim n As Double
 Dim dat1 As Date
 Dim dat2 As Date
@@ -1340,6 +1359,7 @@ Call chargegrd1_clear
 End If
 End Sub
 Private Sub chargegrd1()
+On Error Resume Next
 Dim n As Double
 Dim m As Double
 Dim k As Double
@@ -1431,6 +1451,7 @@ Label10.Caption = m
 End Sub
 
 Private Sub grd1_Click()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim a As Double
@@ -1466,35 +1487,42 @@ End If
 End Sub
 
 Private Sub Option1_Click()
+On Error Resume Next
 Text1.SetFocus
 End Sub
 
 Private Sub Option2_Click()
+On Error Resume Next
 Text1.SetFocus
 
 End Sub
 
 Private Sub Option3_Click()
+On Error Resume Next
 Text1.SetFocus
 
 End Sub
 
 Private Sub Option4_Click()
+On Error Resume Next
 Text1.SetFocus
 
 End Sub
 
 Private Sub Option5_Click()
+On Error Resume Next
 Text1.SetFocus
 
 End Sub
 
 Private Sub Option6_Click()
+On Error Resume Next
 Text1.SetFocus
 
 End Sub
 
 Private Sub Text1_Change()
+On Error Resume Next
 If Len(Text1.Text) > 0 Then
 Text1.BackColor = &HC000&
 Else
@@ -1504,9 +1532,11 @@ End If
 End Sub
 
 Private Sub Text1_Click()
+On Error Resume Next
 Text1_Change
 End Sub
 Private Sub chargegrd1_clear()
+On Error Resume Next
 grd1.Clear
 grd1.Cols = 11
 grd1.Rows = 1
@@ -1549,6 +1579,7 @@ grd1.Text = "«·«‰’—«›"
 
 End Sub
 Private Sub supression_pointageo()
+On Error Resume Next
 Dim i As Double
 Dim n As Double
 Dim tx0 As String
@@ -1671,6 +1702,7 @@ pe.MoveNext
 Loop
 End Sub
 Private Sub supression_pointage()
+On Error Resume Next
 Dim i As Double
 Dim n As Double
 Dim dt0 As String
@@ -1985,6 +2017,7 @@ pd!dat = DT3.Value
 pd.Update
 End Sub
 Private Sub chargcombo1()
+On Error Resume Next
 Combo1.Clear
 Call cont
 Do While Not cl.EOF
@@ -1994,6 +2027,7 @@ Loop
 End Sub
 
 Private Sub inscriptions()
+On Error Resume Next
 Dim tx As String
 Dim n As Double
 Dim i As Double

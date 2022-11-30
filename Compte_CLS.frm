@@ -111,7 +111,7 @@ Begin VB.Form Compte_CLS
          CalendarBackColor=   16744576
          CalendarTitleBackColor=   16711680
          CalendarTrailingForeColor=   16744576
-         Format          =   22609921
+         Format          =   124977153
          CurrentDate     =   42638
       End
       Begin MSComCtl2.DTPicker DT2 
@@ -135,7 +135,7 @@ Begin VB.Form Compte_CLS
          CalendarBackColor=   16744576
          CalendarTitleBackColor=   16711680
          CalendarTrailingForeColor=   16744576
-         Format          =   22609921
+         Format          =   124977153
          CurrentDate     =   42638
       End
       Begin VB.Label Label 
@@ -802,42 +802,51 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
 Private Sub Combo3_Change()
+On Error Resume Next
 Call grd2_clear
 
 End Sub
 
 Private Sub Combo3_Click()
+On Error Resume Next
 Combo3_Change
 End Sub
 
 Private Sub Combo4_Change()
+On Error Resume Next
 Call grd2_clear
 
 End Sub
 
 Private Sub Combo4_Click()
+On Error Resume Next
 Combo4_Change
 End Sub
 
 Private Sub Combo5_Change()
+On Error Resume Next
 Call grd2_clear
 
 End Sub
 
 Private Sub Combo5_Click()
+On Error Resume Next
 Combo5_Change
 End Sub
 
 Private Sub Combo7_Change()
+On Error Resume Next
 Call grd2_clear
 
 End Sub
 
 Private Sub Combo7_Click()
+On Error Resume Next
 Combo7_Change
 End Sub
 
 Private Sub Command1_Click()
+On Error Resume Next
 Call cont
 Do While Not pr.EOF
 pr.Delete
@@ -942,10 +951,12 @@ MsgBox "OK"
 End Sub
 
 Private Sub Command2_Click()
+On Error Resume Next
 
 End Sub
 
 Private Sub Command7_Click()
+On Error Resume Next
 Label19.Caption = eb!pce
 Label8.Caption = eb!moi
 grd2.Visible = False
@@ -986,15 +997,18 @@ End Sub
 
 
 Private Sub DT1_Change()
+On Error Resume Next
 Call grd2_clear
 
 End Sub
 
 Private Sub DT1_Click()
+On Error Resume Next
 DT1_Change
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Top = 0
 Me.Left = 0
 Call chargcombo2_6
@@ -1007,6 +1021,7 @@ DT1.Value = Date
 DT2.Value = Date
 End Sub
 Private Sub chargcombo2_6()
+On Error Resume Next
 Combo2.Clear
 Combo6.Clear
 Call cont
@@ -1017,6 +1032,7 @@ an.MoveNext
 Loop
 End Sub
 Private Sub chargcombo1_3_5()
+On Error Resume Next
 Combo1.Clear
 Combo3.Clear
 Combo5.Clear
@@ -1029,6 +1045,7 @@ cl.MoveNext
 Loop
 End Sub
 Private Sub chargegrd2_Tc_Tm()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim m As Double
@@ -1125,6 +1142,7 @@ Label13.Caption = sn
 Label4.Caption = (sp + sl + sn)
 End Sub
 Private Sub chargegrd2_Tc_m()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim m As Double
@@ -1223,6 +1241,7 @@ Label13.Caption = sn
 Label4.Caption = (sp + sl + sn)
 End Sub
 Private Sub chargegrd2_c_m()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim m As Double
@@ -1323,6 +1342,7 @@ Label13.Caption = sn
 Label4.Caption = (sp + sl + sn)
 End Sub
 Private Sub chargegrd2_c_Tm()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim m As Double
@@ -1420,6 +1440,7 @@ Label13.Caption = sn
 Label4.Caption = (sp + sl + sn)
 End Sub
 Private Sub chargegrd2_Tc_d()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim m As Double
@@ -1491,6 +1512,7 @@ Loop
 grd2.Rows = i
 End Sub
 Private Sub Option1_Click()
+On Error Resume Next
 Call grd2_clear
 DT1.Enabled = True
 Combo7.Enabled = False
@@ -1502,6 +1524,7 @@ Combo5.Enabled = False
 End Sub
 
 Private Sub Option2_Click()
+On Error Resume Next
 Call grd2_clear
 DT1.Enabled = False
 Combo7.Enabled = True
@@ -1526,6 +1549,7 @@ Combo5.Enabled = False
 End Sub
 
 Private Sub Option4_Click()
+On Error Resume Next
 Call grd2_clear
 DT1.Enabled = False
 Combo7.Enabled = False
@@ -1538,6 +1562,7 @@ Combo5.Enabled = False
 End Sub
 
 Private Sub Option5_Click()
+On Error Resume Next
 Call grd2_clear
 DT1.Enabled = False
 Combo7.Enabled = False
@@ -1550,6 +1575,7 @@ Combo5.Enabled = False
 End Sub
 
 Private Sub Option6_Click()
+On Error Resume Next
 Call grd2_clear
 DT1.Enabled = False
 Combo7.Enabled = False
@@ -1561,6 +1587,7 @@ Combo5.Enabled = True
 
 End Sub
 Private Sub grd2_clear()
+On Error Resume Next
 grd2.Clear
 grd2.Cols = 9
 grd2.Rows = 1
@@ -1604,6 +1631,7 @@ grd2.Text = "‰’Ì» «·√”« –…"
 
 End Sub
 Private Sub recettes()
+On Error Resume Next
 Dim i As Double
 Dim n As Double
 Dim t As Double
@@ -1645,3 +1673,4 @@ ct.MoveNext
 Loop
 
 End Sub
+

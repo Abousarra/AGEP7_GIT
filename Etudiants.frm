@@ -3,7 +3,7 @@ Object = "{8E515444-86DF-11D3-A630-444553540001}#1.0#0"; "barcodex.ocx"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "comctl32.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form Etudiants 
    BackColor       =   &H00008000&
    BorderStyle     =   0  'None
@@ -655,7 +655,7 @@ Begin VB.Form Etudiants
       CalendarBackColor=   16744576
       CalendarTitleBackColor=   16711680
       CalendarTrailingForeColor=   16744576
-      Format          =   53477377
+      Format          =   124977153
       CurrentDate     =   42638
    End
    Begin VB.Label Label11 
@@ -972,6 +972,7 @@ Dim seri As String
 Dim basa As String
 
 Private Sub chargcombo1()
+On Error Resume Next
 Combo1.Clear
 Call cont
 Do While Not cl.EOF
@@ -983,6 +984,7 @@ Loop
 End Sub
 
 Private Sub Combo1_Change()
+On Error Resume Next
 If Len(Combo1.Text) > 0 Then
 Combo1.BackColor = &HC000&
 grd1.Visible = False
@@ -1002,10 +1004,12 @@ End If
 End Sub
 
 Private Sub Combo1_Click()
+On Error Resume Next
 Combo1_Change
 End Sub
 
 Private Sub Combo2_Change()
+On Error Resume Next
 If Len(Combo2.Text) > 0 Then
 Combo2.BackColor = &HC000&
 Call chargcombo1
@@ -1018,6 +1022,7 @@ End If
 End Sub
 
 Private Sub Combo2_Click()
+On Error Resume Next
 Combo2_Change
 End Sub
 
@@ -1038,6 +1043,7 @@ PicFile = ""
 End Sub
 
 Private Sub Command2_Click()
+On Error Resume Next
 PicFile = ""
 Image1.Picture = LoadPicture(PicFile) 'Afficher l'image
 fName = ""
@@ -1045,6 +1051,7 @@ fName = ""
 End Sub
 
 Private Sub Command3_Click()
+On Error Resume Next
 Dim x$
 Text1.Text = Trim(Text1.Text)
 Text2.Text = Trim(Text2.Text)
@@ -1151,6 +1158,7 @@ Timer1.Enabled = True
 End Sub
 
 Private Sub Command4_Click()
+On Error Resume Next
 Text2.Text = ""
 Text3.Text = ""
 Text7.Text = ""
@@ -1180,6 +1188,7 @@ Timer1.Enabled = False
 End Sub
 
 Private Sub Command5_Click()
+On Error Resume Next
 Dim i As Double
 Dim n As Double
 Call cont
@@ -1229,6 +1238,7 @@ Set data = Nothing
 End Sub
 
 Private Sub Command6_Click()
+On Error Resume Next
 Call cont3
 Do While Not et3.EOF
 Call cont
@@ -1254,6 +1264,7 @@ MsgBox "OK", vbInformation
 End Sub
 
 Private Sub Command7_Click()
+On Error Resume Next
 PicFile = ""
 Image1.Picture = LoadPicture(PicFile)
 mCapHwnd = capCreateCaptureWindow("AlsahemCapture", 0, 0, 0, 320, 240, Me.hWnd, 0)
@@ -1274,6 +1285,7 @@ PicFile = App.Path & "\image.jpg"
 End Sub
 
 Private Sub Command8_Click()
+On Error Resume Next
 Dim cl1 As String
 Dim cl2 As String
 Dim niv1 As String
@@ -1298,6 +1310,7 @@ MsgBox "OK", vbInformation
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Left = 0
 Me.Top = 0
 Call cont
@@ -1308,6 +1321,7 @@ BX1.Caption = xs
 Call chargegrd1_clear
 End Sub
 Private Sub grd1_Click()
+On Error Resume Next
 Dim sx As String
 Dim i As Double
 Dim j As Double
@@ -1386,6 +1400,7 @@ End If
 End Sub
 
 Private Sub grd2_Click()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 i = grd2.Row
@@ -1400,36 +1415,42 @@ End Sub
 
 
 Private Sub Option1_Click()
+On Error Resume Next
 grd1.Col = 1
 grd1.Sort = 1
 
 End Sub
 
 Private Sub Option2_Click()
+On Error Resume Next
 grd1.Col = 2
 grd1.Sort = 1
 
 End Sub
 
 Private Sub Option3_Click()
+On Error Resume Next
 grd1.Col = 4
 grd1.Sort = 1
 
 End Sub
 
 Private Sub Option4_Click()
+On Error Resume Next
 grd1.Col = 6
 grd1.Sort = 1
 
 End Sub
 
 Private Sub Option5_Click()
+On Error Resume Next
 grd1.Col = 8
 grd1.Sort = 1
 
 End Sub
 
 Private Sub Text1_Change()
+On Error Resume Next
 If Len(Text1.Text) > 0 Then
 Text1.BackColor = &HC000&
 Else
@@ -1440,10 +1461,12 @@ ActivateKeyboardLayout 67175425, 167175425
 End Sub
 
 Private Sub Text1_Click()
+On Error Resume Next
 Text1_Change
 End Sub
 
 Private Sub Text3_Change()
+On Error Resume Next
 grd2.Clear
 grd2.Rows = 1
 grd2.Cols = 4
@@ -1471,15 +1494,18 @@ End If
 End Sub
 
 Private Sub Text3_Click()
+On Error Resume Next
 Text3_Change
 End Sub
 
 Private Sub Text3_GotFocus()
+On Error Resume Next
 Picture2.Visible = True
 
 End Sub
 
 Private Sub Text3_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 If KeyAscii <> 8 Then
 If KeyAscii = 46 Then
 KeyAscii = 0
@@ -1493,27 +1519,33 @@ End Sub
 
 
 Private Sub Text3_LostFocus()
+On Error Resume Next
 Picture2.Visible = False
 End Sub
 
 Private Sub Text4_Change()
+On Error Resume Next
 ActivateKeyboardLayout 67896332, 67896332
 
 End Sub
 
 Private Sub Text4_Click()
+On Error Resume Next
 Text4_Change
 End Sub
 
 Private Sub Text5_Change()
+On Error Resume Next
 Call chargegrd1_clear
 End Sub
 
 Private Sub Text5_Click()
+On Error Resume Next
 Text5_Change
 End Sub
 
 Private Sub Text5_KeyUp(KeyCode As Integer, Shift As Integer)
+On Error Resume Next
 If Text5.Text <> "" Then
 If KeyCode = 13 Then
 Call cont
@@ -1536,6 +1568,7 @@ End If
 End Sub
 
 Private Sub Text7_Change()
+On Error Resume Next
 If Len(Text7.Text) > 0 Then
 Text7.BackColor = &HC000&
 Else
@@ -1545,9 +1578,11 @@ End If
 End Sub
 
 Private Sub Text7_Click()
+On Error Resume Next
 Text7_Change
 End Sub
 Public Sub recheche()
+On Error Resume Next
 Dim i As Double
 grd2.Clear
 grd2.Visible = False
@@ -1593,6 +1628,7 @@ grd2.Visible = True
 End Sub
 
 Private Sub Timer1_Timer()
+On Error Resume Next
 ProgressBar1.Value = ProgressBar1.Value + 8
 If ProgressBar1.Value > 90 Then
 'MsgBox " „  «·⁄„·Ì… »‰Ã«Õ", vbInformation + arabic
@@ -1601,6 +1637,7 @@ End If
 
 End Sub
 Private Sub chargegrd1()
+On Error Resume Next
 Dim a As Double
 Dim b As Double
 Dim c As Double
@@ -1723,6 +1760,7 @@ grd1.Col = 4
 grd1.Sort = 2
 End Sub
 Private Sub chargegrd1_clear()
+On Error Resume Next
 grd1.Clear
 grd1.Cols = 11
 grd1.Rows = 1
@@ -1766,6 +1804,7 @@ grd1.Col = 8
 grd1.Text = "Â« › «·ÊﬂÌ·"
 End Sub
 Private Sub enregistrerphotto()
+On Error Resume Next
 Dim Security As SECURITY_ATTRIBUTES
 Dim x$
 Dim y$
@@ -1794,6 +1833,7 @@ SavePicture Image1.Picture, App.Path & "\" & Label13.Caption & "\IMAGES\" & Comb
 End Sub
 
 Private Sub supression_series()
+On Error Resume Next
 Call cont
 Do While Not sr.EOF
 If seri = sr!sri Then
@@ -1806,6 +1846,7 @@ sr.MoveNext
 Loop
 End Sub
 Private Sub chargegrd1_sri()
+On Error Resume Next
 Dim a As Double
 Dim b As Double
 Dim c As Double
@@ -1899,3 +1940,4 @@ grd1.Rows = i
 grd1.Col = 4
 grd1.Sort = 2
 End Sub
+

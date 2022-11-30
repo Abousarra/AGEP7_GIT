@@ -1627,6 +1627,7 @@ Private Declare Function InvalidateRect Lib "user32" (ByVal hWnd As Long, lpRect
 
 
 Private Sub Command1_Click()
+On Error Resume Next
 With grd2
     Text2.Visible = False
     'Set Text2.Font = .Font
@@ -1645,6 +1646,7 @@ End Sub
 
 
 Private Sub Command10_Click()
+On Error Resume Next
 Dim a As String
 a = Text1.Text
 Call cont
@@ -1668,6 +1670,7 @@ Set data = Nothing
 End Sub
 
 Private Sub Command11_Click()
+On Error Resume Next
 Dim i As Double
 Dim n As Double
 Dim r As Double
@@ -1783,6 +1786,7 @@ End Sub
 
 
 Private Sub Command12_Click()
+On Error Resume Next
 Command14.Enabled = False
 Call rangs_C_L
 Command14.Enabled = True
@@ -1790,11 +1794,13 @@ Command14.Enabled = True
 End Sub
 
 Private Sub Command13_Click()
+On Error Resume Next
 Call absences
 
 End Sub
 
 Private Sub Command14_Click()
+On Error Resume Next
 Command14.Enabled = False
 Call rangs_C_P
 Command14.Enabled = True
@@ -1802,11 +1808,13 @@ Command14.Enabled = True
 End Sub
 
 Private Sub Command15_Click()
+On Error Resume Next
 Call absences_P
 
 End Sub
 
 Private Sub Command16_Click()
+On Error Resume Next
     Dim ac As Access.Application
     Set ac = New Access.Application
     Call cont
@@ -1830,10 +1838,12 @@ Set data = Nothing
 End Sub
 
 Private Sub Command3_Click()
+On Error Resume Next
 MsgBox Chr$(8)
 End Sub
 
 Private Sub Command4_Click()
+On Error Resume Next
 grd2.Visible = False
 Call calcule_moyenne_lc
 grd2.Visible = True
@@ -1841,12 +1851,14 @@ grd2.Visible = True
 End Sub
 
 Private Sub Command5_Click()
+On Error Resume Next
 grd2.Visible = False
 Call calcule_moyenne_lc
 grd2.Visible = True
 End Sub
 
 Private Sub Command6_Click()
+On Error Resume Next
 r = (27 - n)
 For i = 1 To r
 nt.AddNew
@@ -1898,6 +1910,7 @@ Next i
 End Sub
 
 Private Sub Command7_Click()
+On Error Resume Next
 Text1.Text = Trim(Text1.Text)
 If Text1.Text = "" Then
 MsgBox "ÇáÑÌÇÁ ÇÏÎÇá ÇáÑÞã ÇáÊÓáÓáí Ëã ÚÑÖ ÇáÈíÇäÇÊ", vbCritical + arabic
@@ -1958,6 +1971,7 @@ Text1.SetFocus
 End Sub
 
 Private Sub Command8_Click()
+On Error Resume Next
 Dim i As Double
 Dim n As Double
 Text1.Text = Trim(Text1.Text)
@@ -2069,6 +2083,7 @@ Command8.Enabled = True
 End Sub
 
 Private Sub Command9_Click()
+On Error Resume Next
 Dim a As Double
 a = Text1.Text
 Call cont
@@ -2093,6 +2108,7 @@ End Sub
 
 
 Private Sub chargcombo1()
+On Error Resume Next
 Combo1.Clear
 Call cont
 Do While Not cl.EOF
@@ -2103,6 +2119,7 @@ cl.MoveNext
 Loop
 End Sub
 Private Sub chargegrd2_tete()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 grd2.Clear
@@ -2189,6 +2206,7 @@ grd2.Col = 18
 grd2.Text = "ÇáãÌãæÚ"
 End Sub
 Private Sub chargegrd2()
+On Error Resume Next
 Dim i As Double
 Dim tx1 As String
 Dim tx2 As String
@@ -2239,6 +2257,7 @@ End If
 grd2.Rows = i
 End Sub
 Private Sub chargegrd2_tete_pr()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 grd2.Clear
@@ -2326,6 +2345,7 @@ grd2.Text = "ÇáãÌãæÚ"
 End Sub
 
 Private Sub grd1_Click()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 i = grd1.Row
@@ -2341,6 +2361,7 @@ End Sub
 
 
 Private Sub grd2_Click()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 i = grd2.Row
@@ -2353,6 +2374,7 @@ End If
 End Sub
 
 Private Sub grd2_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim n As Double
@@ -2448,6 +2470,7 @@ End Sub
 
 
 Private Sub Text1_Change()
+On Error Resume Next
 If Len(Text1.Text) > 0 Then
 Text1.BackColor = &HC000&
 Else
@@ -2487,10 +2510,12 @@ grd2.Visible = True
 End Sub
 
 Private Sub Text1_Click()
+On Error Resume Next
 Text1_Change
 End Sub
 
 Private Sub Text1_KeyUp(KeyCode As Integer, Shift As Integer)
+On Error Resume Next
 If Text1.Text <> "" Then
 If KeyCode = 13 Then
 Command7_Click
@@ -2499,10 +2524,12 @@ End If
 End Sub
 
 Private Sub Text2_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 MsgBox KeyAscii
 
 End Sub
 Public Sub calcule_moyenne_lc()
+On Error Resume Next
 Dim d1 As Double
 Dim sd As Double
 Dim nd As Double
@@ -2692,6 +2719,7 @@ Call mention
 End If
 End Sub
 Private Sub coff_dv_ex()
+On Error Resume Next
 Dim n As Double
 Dim i As Double
 Dim j As Double
@@ -2740,6 +2768,7 @@ End If
 Next i
 End Sub
 Private Sub chargegrd2_notes()
+On Error Resume Next
 Dim i As Double
 Dim n As Double
 Dim tx1 As String
@@ -2807,6 +2836,7 @@ nt.MoveNext
 Loop
 End Sub
 Private Sub mention()
+On Error Resume Next
 Dim a As Double
 Dim b As Double
 Dim c As Double
@@ -2881,6 +2911,7 @@ End If
 End Sub
 
 Private Sub bulletin_primaire()
+On Error Resume Next
 'On Error Resume Next
 Dim i As Double
 Dim k As Double
@@ -3127,6 +3158,7 @@ Label38.Caption = te
 
 End Sub
 Private Sub chargetreeview1()
+On Error Resume Next
 Dim id1 As String
 Dim id2 As String
 TreeView1.Nodes.Clear
@@ -3232,19 +3264,20 @@ P:
 Exit Sub
 End Sub
 Private Sub absences()
+On Error Resume Next
 'On Error GoTo p
 Dim n1 As Double
 Dim n2 As Double
 Dim k1 As Double
 Dim k2 As Double
 Dim s As Double
-Dim Y$
+Dim y$
 n1 = 0
 n2 = 0
 s = 0
 Label27.Caption = "0"
-    Y$ = dir$(App.Path & "\" & Interface.SBB1.Panels(1).Text & "\POINTAGES\" & Label8.Caption & ".txt")
-If Y$ <> "" Then
+    y$ = dir$(App.Path & "\" & Interface.SBB1.Panels(1).Text & "\POINTAGES\" & Label8.Caption & ".txt")
+If y$ <> "" Then
 Open App.Path & "\" & Interface.SBB1.Panels(1).Text & "\POINTAGES\" & Label8.Caption & ".txt" For Input As #1
     Do While Not EOF(1)
         s = s + 1
@@ -3258,8 +3291,8 @@ Open App.Path & "\" & Interface.SBB1.Panels(1).Text & "\POINTAGES\" & Label8.Cap
     Loop
     Close #1
 End If
-    Y$ = dir$(App.Path & "\" & Interface.SBB1.Panels(1).Text & "\POINTAGES\" & Text1.Text & ".txt")
-If Y$ <> "" Then
+    y$ = dir$(App.Path & "\" & Interface.SBB1.Panels(1).Text & "\POINTAGES\" & Text1.Text & ".txt")
+If y$ <> "" Then
 Open App.Path & "\" & Interface.SBB1.Panels(1).Text & "\POINTAGES\" & Text1.Text & ".txt" For Input As #2
     s = 0
     Do While Not EOF(2)
@@ -3286,19 +3319,20 @@ P:
 
 End Sub
 Private Sub absences_P()
+On Error Resume Next
 'On Error GoTo p
 Dim n1 As Double
 Dim n2 As Double
 Dim k1 As Double
 Dim k2 As Double
 Dim s As Double
-Dim Y$
+Dim y$
 n1 = 0
 n2 = 0
 s = 0
 Label28.Caption = "0"
-    Y$ = dir$(App.Path & "\" & Interface.SBB1.Panels(1).Text & "\POINTAGES\" & Label8.Caption & ".txt")
-If Y$ <> "" Then
+    y$ = dir$(App.Path & "\" & Interface.SBB1.Panels(1).Text & "\POINTAGES\" & Label8.Caption & ".txt")
+If y$ <> "" Then
 Open App.Path & "\" & Interface.SBB1.Panels(1).Text & "\POINTAGES\" & Label8.Caption & ".txt" For Input As #1
     Do While Not EOF(1)
         s = s + 1
@@ -3312,8 +3346,8 @@ Open App.Path & "\" & Interface.SBB1.Panels(1).Text & "\POINTAGES\" & Label8.Cap
     Loop
     Close #1
 End If
-    Y$ = dir$(App.Path & "\" & Interface.SBB1.Panels(1).Text & "\POINTAGES\" & Text1.Text & ".txt")
-If Y$ <> "" Then
+    y$ = dir$(App.Path & "\" & Interface.SBB1.Panels(1).Text & "\POINTAGES\" & Text1.Text & ".txt")
+If y$ <> "" Then
 Open App.Path & "\" & Interface.SBB1.Panels(1).Text & "\POINTAGES\" & Text1.Text & ".txt" For Input As #2
     s = 0
     Do While Not EOF(2)
@@ -3340,6 +3374,7 @@ P:
 
 End Sub
 Private Sub rangs_C_P()
+On Error Resume Next
 Dim n As Double
 Dim i As Double
 Dim j As Double
@@ -3401,6 +3436,7 @@ Loop
 End Sub
 
 Private Sub rangs_C_L()
+On Error Resume Next
 Dim n As Double
 Dim i As Double
 Dim j As Double
@@ -3468,6 +3504,7 @@ End Sub
 
 
 Private Sub Combo1_Change()
+On Error Resume Next
 If Len(Combo1.Text) > 0 Then
 Combo1.BackColor = &HC000&
 Call cont
@@ -3483,10 +3520,12 @@ Combo1.BackColor = &H8080FF
 End If
 End Sub
 Private Sub Combo1_Click()
+On Error Resume Next
 Combo1_Change
 End Sub
 
 Private Sub Combo2_Change()
+On Error Resume Next
 If Len(Combo2.Text) > 0 Then
 Combo2.BackColor = &HC000&
 Call chargcombo1
@@ -3498,9 +3537,11 @@ End If
 End Sub
 
 Private Sub Combo2_Click()
+On Error Resume Next
 Combo2_Change
 End Sub
 Private Sub Command777_Click()
+On Error Resume Next
 Dim a As String
 Dim n As Double
 Dim P As Double
@@ -3553,6 +3594,7 @@ Command777.Enabled = True
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Left = 0
 Me.Top = 480
 End Sub

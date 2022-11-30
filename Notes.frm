@@ -114,20 +114,24 @@ Me.Left = 0
 End Sub
 
 Private Sub Option1_Click()
+On Error Resume Next
 Unload Notes_B
 Unload Notes_C
 Notes_E.Show
 End Sub
 
 Private Sub Option2_Click()
+On Error Resume Next
 Unload Notes_B
 Unload Notes_E
 Notes_C.Show
 End Sub
 
 Private Sub Option3_Click()
+On Error Resume Next
 Unload Notes_C
 Unload Notes_E
 Notes_B.Show
 
 End Sub
+

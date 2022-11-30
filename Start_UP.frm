@@ -394,6 +394,7 @@ Const TIP_FILE = "TEST.doc"
 Dim CurrentTip As Long
 
 Public Sub DisplayCurrentTip()
+On Error Resume Next
 'On Error Resume Next
 If Tips.Count > 0 Then
 Label4.Caption = Tips.Item(CurrentTip)
@@ -401,12 +402,14 @@ End If
 End Sub
 
 Private Sub DoNextTip()
+On Error Resume Next
 'On Error Resume Next
 CurrentTip = Int((Tips.Count * Rnd) + 1)
 Start_UP.DisplayCurrentTip
 End Sub
 
 Function LoadTips(sFile As String) As Boolean
+On Error Resume Next
 'On Error Resume Next
 Dim NextTip As String
 Dim InFile As Integer
@@ -429,6 +432,7 @@ DoNextTip
 LoadTips = True
 End Function
 Function conn()
+On Error Resume Next
 Set coo = New ADODB.Connection
 Set nn = New ADODB.Recordset
 coo.Provider = "microsoft.jet.oledb.4.0; jet oledb:database password=7346804"
@@ -439,16 +443,19 @@ End Function
 
 
 Private Sub Combo4_Change()
+On Error Resume Next
 'On Error Resume Next
 Timer1.Enabled = True
 End Sub
 
 Private Sub Combo4_Click()
+On Error Resume Next
 'On Error Resume Next
 Combo4_Change
 End Sub
 
 Private Sub Command1_Click()
+On Error Resume Next
 On Error Resume Next
 Dim s As Double
 If Combo4.Text = "" Then
@@ -489,11 +496,13 @@ Timer2.Enabled = True
 End Sub
 
 Private Sub Command2_Click()
+On Error Resume Next
 'On Error Resume Next
 End
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 'On Error Resume Next
 Dim annee As String
 Timer1.Enabled = False
@@ -533,6 +542,7 @@ Combo4.Text = annee
 End Sub
 
 Private Sub Timer1_Timer()
+On Error Resume Next
 'On Error Resume Next
 Dim s As Double
 Dim j As Double
@@ -601,6 +611,7 @@ Timer1.Enabled = False
 End Sub
 
 Private Sub Timer2_Timer()
+On Error Resume Next
 'On Error Resume Next
 ProgressBar1.Value = ProgressBar1.Value + 10
 If ProgressBar1.Value > 90 Then

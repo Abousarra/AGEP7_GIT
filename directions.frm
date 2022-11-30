@@ -156,6 +156,7 @@ Private Declare Function GetClientRect Lib "user32" (ByVal hWnd As Long, lpRect 
 Private Declare Function InvalidateRect Lib "user32" (ByVal hWnd As Long, lpRect As RECT, ByVal bErase As Long) As Long
 '**** right TreeView
 Private Sub MakeTreeViewRTL()
+On Error Resume Next
 Dim rClientRect As RECT
 Dim ReturnStyle As Long
 ReturnStyle = GetWindowLong(TreeView1.hWnd, GWL_EXSTYLE)
@@ -164,6 +165,7 @@ GetClientRect TreeView1.hWnd, rClientRect
 InvalidateRect TreeView1.hWnd, rClientRect, True
 End Sub
 Private Sub couleur_treeview1()
+On Error Resume Next
 Dim lngStyle As Long
 Call SendMessage(TreeView1.hWnd, TVM_SETBKCOLOR, 0, ByVal RGB(250, 247, 13))    'Change the background 'color to red.
     ' Now reset the style so that the tree lines appear properly
@@ -174,12 +176,14 @@ TreeView1.Sorted = True
 End Sub
 
 Private Sub Command1_Click()
+On Error Resume Next
 Call unloadforms
 Unload Me
 login.Show
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Top = 0
 Me.Left = 12880
 Call MakeTreeViewRTL
@@ -190,6 +194,7 @@ Call chargetreeview1
 
 End Sub
 Private Sub chargetreeview1()
+On Error Resume Next
 Dim id1 As String
 Dim id2 As String
 Dim i1 As Double
@@ -262,6 +267,7 @@ Loop
 TreeView1.Nodes(1).Expanded = True
 End Sub
 Private Sub TreeView1_NodeClick(ByVal Node As ComctlLib.Node)
+On Error Resume Next
 Dim n As Double
 n = Node.Index
 Label4.Caption = "OT"
@@ -374,3 +380,4 @@ End If
 
 End If
 End Sub
+

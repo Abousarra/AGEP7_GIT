@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "comctl32.ocx"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form Matieres 
    BackColor       =   &H00008000&
    BorderStyle     =   0  'None
@@ -1694,6 +1694,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
 Private Sub coff_Change(Index As Integer)
+On Error Resume Next
 Dim i As Integer
 Dim j As Integer
 Dim a As Double
@@ -1726,6 +1727,7 @@ End If
 Next i
 End Sub
 Public Sub coffes()
+On Error Resume Next
 Call cont
 coff(0).Text = cf2!cof0
 coff(1).Text = cf2!cof1
@@ -1761,6 +1763,7 @@ mens(11).Text = cf2!tex26
 End Sub
 
 Private Sub Combo1_Change()
+On Error Resume Next
 If Len(Combo1.Text) > 0 Then
 Combo1.BackColor = &HC000&
 grd1.Visible = False
@@ -1774,10 +1777,12 @@ End If
 End Sub
 
 Private Sub Combo1_Click()
+On Error Resume Next
 Combo1_Change
 End Sub
 
 Private Sub Combo2_Change()
+On Error Resume Next
 If Len(Combo2.Text) > 0 Then
 Combo2.BackColor = &HC000&
 Else
@@ -1787,10 +1792,12 @@ End If
 End Sub
 
 Private Sub Combo2_Click()
+On Error Resume Next
 Combo2_Change
 End Sub
 
 Private Sub Combo4_Change()
+On Error Resume Next
 If Len(Combo4.Text) > 0 Then
 Combo4.BackColor = &HC000&
 Combo1.BackColor = &H8080FF
@@ -1812,10 +1819,12 @@ End If
 End Sub
 
 Private Sub Combo4_Click()
+On Error Resume Next
 Combo4_Change
 End Sub
 
 Private Sub Command1_Click()
+On Error Resume Next
 Dim i As Integer
 Dim j As Integer
 Dim a As Double
@@ -1893,6 +1902,7 @@ MsgBox " „ Õ›Ÿ «· €ÌÌ—« ", vbInformation
 End Sub
 
 Private Sub Command2_Click()
+On Error Resume Next
 Dim i As Integer
 Dim j As Integer
 For j = 0 To 11
@@ -1911,6 +1921,7 @@ coff(0).SetFocus
 End Sub
 
 Private Sub Command3_Click()
+On Error Resume Next
 Text1.Text = ""
 Text1.SetFocus
 Text7.Text = ""
@@ -1929,6 +1940,7 @@ Timer1.Enabled = False
 End Sub
 
 Private Sub Command4_Click()
+On Error Resume Next
 Dim n As Double
 Text1.Text = Trim(Text1.Text)
 Text7.Text = Trim(Text7.Text)
@@ -2016,11 +2028,13 @@ Timer1.Enabled = True
 End Sub
 
 Private Sub Command7_Click()
+On Error Resume Next
 Call coffes1
 
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Left = 0
 Me.Top = 0
 Call coffes
@@ -2028,6 +2042,7 @@ chargegrd1_clear
 End Sub
 
 Private Sub grd1_Click()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim au As Double
@@ -2078,6 +2093,7 @@ End Sub
 
 
 Private Sub mens_Change(Index As Integer)
+On Error Resume Next
 Dim i As Double
 i = Index
 If Len(mens(i).Text) > 0 Then
@@ -2088,6 +2104,7 @@ End If
 
 End Sub
 Public Sub coffes1()
+On Error Resume Next
 Call cont
 coff(0).Text = cf1!cof0
 coff(1).Text = cf1!cof1
@@ -2122,6 +2139,7 @@ mens(10).Text = cf1!tex25
 mens(11).Text = cf1!tex26
 End Sub
 Private Sub chargcombo1()
+On Error Resume Next
 Combo1.Clear
 Call cont
 Do While Not cl.EOF
@@ -2133,6 +2151,7 @@ Loop
 End Sub
 
 Private Sub Text1_Change()
+On Error Resume Next
 If Len(Text1.Text) > 0 Then
 Text1.BackColor = &HC000&
 Else
@@ -2142,10 +2161,12 @@ End If
 End Sub
 
 Private Sub Text1_Click()
+On Error Resume Next
 Text1_Change
 End Sub
 
 Private Sub Text4_Change()
+On Error Resume Next
 If Len(Text4.Text) > 0 Then
 Text4.BackColor = &HC000&
 Else
@@ -2155,10 +2176,12 @@ End If
 End Sub
 
 Private Sub Text4_Click()
+On Error Resume Next
 Text4_Change
 End Sub
 
 Private Sub Text4_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 If KeyAscii <> 8 Then
 If KeyAscii = 46 Then
 KeyAscii = 0
@@ -2171,6 +2194,7 @@ End If
 End Sub
 
 Private Sub Text7_Change()
+On Error Resume Next
 If Len(Text7.Text) > 0 Then
 Text7.BackColor = &HC000&
 Else
@@ -2180,10 +2204,12 @@ End If
 End Sub
 
 Private Sub Text7_Click()
+On Error Resume Next
 Text7_Change
 End Sub
 
 Private Sub Text7_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 If KeyAscii <> 8 Then
 If KeyAscii = 46 Then
 KeyAscii = 0
@@ -2196,6 +2222,7 @@ End If
 End Sub
 
 Private Sub Timer1_Timer()
+On Error Resume Next
 ProgressBar1.Value = ProgressBar1.Value + 8
 If ProgressBar1.Value > 90 Then
 MsgBox " „  «·⁄„·Ì… »‰Ã«Õ", vbInformation + arabic
@@ -2204,6 +2231,7 @@ End If
 
 End Sub
 Private Sub chargegrd1()
+On Error Resume Next
 Dim a As Double
 Dim b As Double
 Dim j As Double
@@ -2268,6 +2296,7 @@ grd1.Rows = i
 'grd1.Sort = 2
 End Sub
 Private Sub chargegrd1_clear()
+On Error Resume Next
 Dim a As Double
 Dim b As Double
 Dim j As Double
@@ -2302,4 +2331,5 @@ grd1.Text = "÷«—» «·„«œ…"
 grd1.Col = 4
 grd1.Text = "„⁄œ· «·„«œ…"
 End Sub
+
 

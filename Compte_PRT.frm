@@ -317,7 +317,7 @@ Begin VB.Form Compte_PRT
          CalendarBackColor=   16744576
          CalendarTitleBackColor=   16711680
          CalendarTrailingForeColor=   16744576
-         Format          =   33161217
+         Format          =   124977153
          CurrentDate     =   42638
       End
       Begin VB.Label Label8 
@@ -432,20 +432,20 @@ Begin VB.Form Compte_PRT
       TabCaption(0)   =   "«·„»«·€ «·„Êœ⁄…"
       TabPicture(0)   =   "Compte_PRT.frx":0054
       Tab(0).ControlEnabled=   0   'False
-      Tab(0).Control(0)=   "grd5"
-      Tab(0).Control(1)=   "Command4"
+      Tab(0).Control(0)=   "Command4"
+      Tab(0).Control(1)=   "grd5"
       Tab(0).ControlCount=   2
       TabCaption(1)   =   "«·„»«·€ «·„”ÕÊ»…"
       TabPicture(1)   =   "Compte_PRT.frx":0070
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Command5"
-      Tab(1).Control(1)=   "grd4"
+      Tab(1).Control(0)=   "grd4"
+      Tab(1).Control(1)=   "Command5"
       Tab(1).ControlCount=   2
       TabCaption(2)   =   " ›«’Ì· «·‰›ﬁ« "
       TabPicture(2)   =   "Compte_PRT.frx":008C
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Command6"
-      Tab(2).Control(1)=   "grd3"
+      Tab(2).Control(0)=   "grd3"
+      Tab(2).Control(1)=   "Command6"
       Tab(2).ControlCount=   2
       TabCaption(3)   =   " ›«’Ì· «·Ê«—œ« "
       TabPicture(3)   =   "Compte_PRT.frx":00A8
@@ -1394,6 +1394,7 @@ Private Declare Function InvalidateRect Lib "user32" (ByVal hWnd As Long, lpRect
 '**** right TreeView
 Dim data As New Access.Application
 Private Sub MakeTreeViewRTL()
+On Error Resume Next
 Dim rClientRect As RECT
 Dim ReturnStyle As Long
 ReturnStyle = GetWindowLong(TreeView1.hWnd, GWL_EXSTYLE)
@@ -1402,6 +1403,7 @@ GetClientRect TreeView1.hWnd, rClientRect
 InvalidateRect TreeView1.hWnd, rClientRect, True
 End Sub
 Private Sub couleur_treeview1()
+On Error Resume Next
 Dim lngStyle As Long
 Call SendMessage(TreeView1.hWnd, TVM_SETBKCOLOR, 0, ByVal RGB(250, 247, 13))    'Change the background 'color to red.
     ' Now reset the style so that the tree lines appear properly
@@ -1412,6 +1414,7 @@ TreeView1.Sorted = True
 End Sub
 
 Private Sub chargetreeview1()
+On Error Resume Next
 Dim id1 As String
 Dim id2 As String
 Dim i As Double
@@ -1432,15 +1435,18 @@ Loop
 End Sub
 
 Private Sub Combo1_Change()
+On Error Resume Next
 Call tous_clear
 
 End Sub
 
 Private Sub Combo1_Click()
+On Error Resume Next
 Combo1_Change
 End Sub
 
 Private Sub Command1_Click()
+On Error Resume Next
 Text1.Text = Trim(Text1.Text)
 If Text1.Text = "" Then
 MsgBox "«·—Ã«¡ «œŒ«· «·—ﬁ„ «· ”·”·Ì ", vbCritical + arabic
@@ -1482,6 +1488,7 @@ End Sub
 
 
 Private Sub Command2_Click()
+On Error Resume Next
 If Text1.Text = "" Then
 MsgBox "«·—Ã«¡ «œŒ«· «·—ﬁ„ «· ”·”·Ì À„ «·÷€ÿ ⁄·Ï ⁄—÷", vbCritical + arabic
 Text1.SetFocus
@@ -1507,6 +1514,7 @@ End If
 End Sub
 
 Private Sub Command3_Click()
+On Error Resume Next
 Text4.Text = Trim(Text4.Text)
 Text5.Text = Trim(Text5.Text)
 Text6.Text = Trim(Text6.Text)
@@ -1545,6 +1553,7 @@ Loop
 End Sub
 
 Private Sub Command8_Click()
+On Error Resume Next
 If Option1.Value = False And Option2.Value = False Then
 MsgBox "ÌÃ»  ÕœÌœ √Õœ «·ŒÌ«—«  ⁄·Ï «·Ì„Ì‰", vbCritical
 Exit Sub
@@ -1581,6 +1590,7 @@ Command8.Enabled = True
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Left = 0
 Me.Top = 0
 Call MakeTreeViewRTL
@@ -1590,16 +1600,19 @@ Label19.Caption = eb!pce
 Label36.Caption = eb!moi
 End Sub
 Private Sub Option1_Click()
+On Error Resume Next
 Combo1.Visible = True
 Call tous_clear
 End Sub
 
 Private Sub Option2_Click()
+On Error Resume Next
 Combo1.Visible = False
 Call tous_clear
 End Sub
 
 Private Sub Text1_Change()
+On Error Resume Next
 If Len(Text1.Text) > 0 Then
 Text1.BackColor = &HC000&
 Picture2.Visible = True
@@ -1615,10 +1628,12 @@ Text6.Text = ""
 End Sub
 
 Private Sub Text1_Click()
+On Error Resume Next
 Text1_Change
 End Sub
 
 Private Sub Text2_Change()
+On Error Resume Next
 If Len(Text2.Text) > 0 Then
 Text2.BackColor = &HC000&
 Else
@@ -1628,10 +1643,12 @@ End If
 End Sub
 
 Private Sub Text2_Click()
+On Error Resume Next
 Text2_Change
 End Sub
 
 Private Sub Text4_Change()
+On Error Resume Next
 If Len(Text4.Text) > 0 Then
 Text4.BackColor = &HC000&
 Else
@@ -1641,10 +1658,12 @@ End If
 End Sub
 
 Private Sub Text4_Click()
+On Error Resume Next
 Text4_Change
 End Sub
 
 Private Sub Text5_Change()
+On Error Resume Next
 If Len(Text5.Text) > 0 Then
 Text5.BackColor = &HC000&
 Else
@@ -1654,10 +1673,12 @@ End If
 End Sub
 
 Private Sub Text5_Click()
+On Error Resume Next
 Text5_Change
 End Sub
 
 Private Sub Text6_Change()
+On Error Resume Next
 If Len(Text6.Text) > 0 Then
 Text6.BackColor = &HC000&
 Else
@@ -1667,10 +1688,12 @@ End If
 End Sub
 
 Private Sub Text6_Click()
+On Error Resume Next
 Text6_Change
 End Sub
 
 Private Sub TreeView1_NodeClick(ByVal Node As ComctlLib.Node)
+On Error Resume Next
 Dim n As Double
 Text3.Text = Node.Key
 n = Len(Text3.Text)
@@ -1683,6 +1706,7 @@ End If
 
 End Sub
 Private Sub chargegrd4_5_T()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim a As Double
@@ -1788,6 +1812,7 @@ Label27.Caption = P
 Label29.Caption = r
 End Sub
 Private Sub chargegrd4_5_M()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim a As Double
@@ -1896,6 +1921,7 @@ Label27.Caption = P
 Label29.Caption = r
 End Sub
 Private Sub tous_clear()
+On Error Resume Next
 Label27.Caption = "0"
 Label29.Caption = "0"
 Label20.Caption = "0"
@@ -2009,6 +2035,7 @@ grd3.Text = "«· ›«’Ì·"
 
 End Sub
 Private Sub chargegrd3_T()
+On Error Resume Next
 Dim i As Double
 Dim dat1 As Date
 Dim dat2 As Date
@@ -2091,6 +2118,7 @@ grd3.Rows = i
 Label10.Caption = sd
 End Sub
 Private Sub chargegrd3_M()
+On Error Resume Next
 Dim i As Double
 Dim m As Double
 Dim d As Double
@@ -2175,6 +2203,7 @@ Label10.Caption = sd
 End Sub
 
 Private Sub chargegrd2_M()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim m As Double
@@ -2293,6 +2322,7 @@ Label8.Caption = sp
 Label5.Caption = sl
 End Sub
 Private Sub chargegrd2_T()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim m As Double
@@ -2409,6 +2439,7 @@ Label8.Caption = sp
 Label5.Caption = sl
 End Sub
 Private Sub Sold_PRT()
+On Error Resume Next
 Dim a As Double
 Dim b As Double
 Dim c As Double

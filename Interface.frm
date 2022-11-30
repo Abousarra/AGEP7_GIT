@@ -41,7 +41,7 @@ Begin VB.MDIForm Interface
          _ExtentX        =   3836
          _ExtentY        =   1085
          _Version        =   393216
-         Format          =   123600897
+         Format          =   124977153
          CurrentDate     =   42637
       End
    End
@@ -116,6 +116,7 @@ Dim myDate As String
 Dim x As Integer
 Dim yy As Integer
 Private Sub MDIForm_Load()
+On Error Resume Next
 Dim j As Double
 Me.Top = 100
 Me.Left = 100
@@ -131,6 +132,7 @@ login.Show
 'Utilisateurs.Show
 End Sub
 Private Sub chargepanels()
+On Error Resume Next
 Call cont
 SBB1.Panels(1).Width = 1300
 'SBB1.Panels(1).Text = "2017-2018"
@@ -165,6 +167,7 @@ SBB1.Panels(8).Text = "»—„Ã… Ê ’„Ì„: √»Ê»ﬂ— √Õ„œÊ «·€“«·Ì 22660920-33440920"
 SBB1.Panels(8).Alignment = sbrRight
 End Sub
 Private Sub dater()
+On Error Resume Next
 da = DT1.DayOfWeek
 dy = DT1.Day
 mont = DT1.Month
@@ -218,6 +221,7 @@ myDate = da + " " + dy + " " + mont + " " + ye
 End Sub
 
 Private Sub MDIForm_QueryUnload(Cancel As Integer, UnloadMode As Integer)
+On Error Resume Next
 Dim Answer As Integer
    Answer = MsgBox("Â·  ÊœÊ‰ Õﬁ« «·Œ—ÊÃ ⁄‰ «·»—‰«„Ãø", _
    vbQuestion + vbYesNo, " √ﬂÌœ")
@@ -229,6 +233,7 @@ End If
 End Sub
 
 Private Sub Timer1_Timer()
+On Error Resume Next
 Dim tx As String
 Dim result As Long, fileop As SHFILEOPSTRUCT
 Dim i As Double
@@ -282,6 +287,7 @@ MsgBox "«·—Ã«¡ «· √ﬂœ „‰ ’Õ… „ﬂ«‰ «· Œ“Ì‰ «· ·ﬁ«∆Ì", vbExclamation
 End Sub
 
 Private Sub Timer10_Timer()
+On Error Resume Next
 DT1.Value = Date
 Call dater
 

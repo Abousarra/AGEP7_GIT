@@ -125,7 +125,7 @@ Begin VB.Form Compte_DPS
       CalendarBackColor=   16744576
       CalendarTitleBackColor=   16711680
       CalendarTrailingForeColor=   16744576
-      Format          =   22609921
+      Format          =   124977153
       CurrentDate     =   42638
    End
    Begin MSComCtl2.DTPicker DT3 
@@ -149,7 +149,7 @@ Begin VB.Form Compte_DPS
       CalendarBackColor=   16744576
       CalendarTitleBackColor=   16711680
       CalendarTrailingForeColor=   16744576
-      Format          =   22609921
+      Format          =   124977153
       CurrentDate     =   42638
    End
    Begin VB.Label Label5 
@@ -319,11 +319,13 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Top = 0
 Me.Left = 0
 Call chargegrd2_T
 End Sub
 Private Sub chargegrd2_M()
+On Error Resume Next
 Dim i As Double
 Dim dat1 As Date
 Dim dat2 As Date
@@ -392,6 +394,7 @@ grd2.Rows = i
 Label1.Caption = sd
 End Sub
 Private Sub chargegrd2_T()
+On Error Resume Next
 Dim i As Double
 Dim dat1 As Date
 Dim dat2 As Date

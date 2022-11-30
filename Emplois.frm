@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "comctl32.ocx"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form Emplois 
    BackColor       =   &H00008000&
    BorderStyle     =   0  'None
@@ -491,6 +491,7 @@ Combo3.AddItem "23 - 00"
 
 End Sub
 Private Sub chargecombo4()
+On Error Resume Next
 Combo4.Clear
 Combo4.AddItem "8 - 10"
 Combo4.AddItem "10 - 12"
@@ -503,6 +504,7 @@ Combo4.AddItem "22 - 00"
 
 End Sub
 Private Sub chargecombo6()
+On Error Resume Next
 Combo6.Clear
 Combo6.AddItem "«·«À‰Ì‰"
 Combo6.AddItem "«·À·«À«¡"
@@ -514,6 +516,7 @@ Combo6.AddItem "«·√Õœ"
 End Sub
 
 Private Sub Combo1_Change()
+On Error Resume Next
 If Len(Combo1.Text) > 0 Then
 Combo1.BackColor = &HC000&
 Call chargecombo2
@@ -525,10 +528,13 @@ End If
 End Sub
 
 Private Sub Combo1_Click()
+On Error Resume Next
 Combo1_Change
 End Sub
 
 Private Sub Combo2_Change()
+On Error Resume Next
+On Error Resume Next
 If Len(Combo2.Text) > 0 Then
 Combo2.BackColor = &HC000&
 Else
@@ -538,10 +544,12 @@ End If
 End Sub
 
 Private Sub Combo2_Click()
+On Error Resume Next
 Combo2_Change
 End Sub
 
 Private Sub Combo3_Change()
+On Error Resume Next
 If Len(Combo3.Text) > 0 Then
 Combo3.BackColor = &HC000&
 Combo4.BackColor = &HC000&
@@ -553,10 +561,12 @@ End If
 End Sub
 
 Private Sub Combo3_Click()
+On Error Resume Next
 Combo3_Change
 End Sub
 
 Private Sub Combo4_Change()
+On Error Resume Next
 If Len(Combo4.Text) > 0 Then
 Combo4.BackColor = &HC000&
 Combo3.BackColor = &HC000&
@@ -568,10 +578,12 @@ End If
 End Sub
 
 Private Sub Combo4_Click()
+On Error Resume Next
 Combo4_Change
 End Sub
 
 Private Sub Combo5_Change()
+On Error Resume Next
 If Len(Combo5.Text) > 0 Then
 Combo5.BackColor = &HC000&
 Call chargecombo1
@@ -583,10 +595,12 @@ End If
 End Sub
 
 Private Sub Combo5_Click()
+On Error Resume Next
 Combo5_Change
 End Sub
 
 Private Sub Combo6_Change()
+On Error Resume Next
 If Len(Combo6.Text) > 0 Then
 Combo6.BackColor = &HC000&
 Else
@@ -596,10 +610,12 @@ End If
 End Sub
 
 Private Sub Combo6_Click()
+On Error Resume Next
 Combo6_Change
 End Sub
 
 Private Sub Command3_Click()
+On Error Resume Next
 If Combo5.Text = "" Or Combo1.Text = "" Or Combo2.Text = "" Or Combo6.Text = "" Then
 MsgBox "«·—Ã«¡ „·¡ Ã„Ì⁄ «·ÕﬁÊ· «·„·Ê‰… »«··Ê‰ «·√Õ„—", vbCritical + arabic
 Exit Sub
@@ -674,6 +690,7 @@ Timer1.Enabled = True
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Left = 0
 Me.Top = 0
 Call chargecombo3
@@ -682,6 +699,7 @@ Call chargecombo6
 Call chargegrd1_clear
 End Sub
 Private Sub chargecombo1()
+On Error Resume Next
 Combo1.Clear
 Call cont
 Do While Not cl.EOF
@@ -692,6 +710,7 @@ cl.MoveNext
 Loop
 End Sub
 Private Sub chargecombo2()
+On Error Resume Next
 Combo2.Clear
 Call cont
 Do While Not mt.EOF
@@ -703,6 +722,7 @@ Loop
 End Sub
 
 Private Sub grd1_Click()
+On Error Resume Next
 Dim h As String
 Dim j As String
 Dim r As Double
@@ -762,6 +782,7 @@ End If
 End Sub
 
 Private Sub chargegrd1()
+On Error Resume Next
 Dim a As Double
 Dim b As Double
 b = 0
@@ -842,6 +863,7 @@ End Sub
 
 
 Private Sub Timer1_Timer()
+On Error Resume Next
 ProgressBar1.Value = ProgressBar1.Value + 8
 If ProgressBar1.Value > 90 Then
 MsgBox " „  «·⁄„·Ì… »‰Ã«Õ", vbInformation + arabic
@@ -857,6 +879,7 @@ End If
 
 End Sub
 Private Sub chargegrd1_clear()
+On Error Resume Next
 Dim a As Double
 Dim b As Double
 b = 0

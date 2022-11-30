@@ -125,7 +125,7 @@ Begin VB.Form Compte_BNK
       CalendarBackColor=   16744576
       CalendarTitleBackColor=   16711680
       CalendarTrailingForeColor=   16744576
-      Format          =   32899073
+      Format          =   124977153
       CurrentDate     =   42638
    End
    Begin MSComCtl2.DTPicker DT3 
@@ -149,7 +149,7 @@ Begin VB.Form Compte_BNK
       CalendarBackColor=   16744576
       CalendarTitleBackColor=   16711680
       CalendarTrailingForeColor=   16744576
-      Format          =   32899073
+      Format          =   124977153
       CurrentDate     =   42638
    End
    Begin VB.Label Label35 
@@ -394,11 +394,13 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub Form_Load()
+On Error Resume Next
 Me.Top = 0
 Me.Left = 0
 Call chargegrd2_T
 End Sub
 Private Sub chargegrd2_M()
+On Error Resume Next
 Dim i As Double
 Dim dat1 As Date
 Dim dat2 As Date
@@ -485,6 +487,7 @@ s = (sd - sr)
 Label12.Caption = s
 End Sub
 Private Sub chargegrd2_T()
+On Error Resume Next
 Dim i As Double
 Dim dat1 As Date
 Dim dat2 As Date

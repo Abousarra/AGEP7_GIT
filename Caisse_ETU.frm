@@ -1046,7 +1046,7 @@ Begin VB.Form Caisse_ETU
       CalendarBackColor=   16744576
       CalendarTitleBackColor=   16711680
       CalendarTrailingForeColor=   16744576
-      Format          =   52232193
+      Format          =   124977153
       CurrentDate     =   42638
    End
    Begin MSFlexGridLib.MSFlexGrid grd5 
@@ -1753,6 +1753,7 @@ Private Declare Function InvalidateRect Lib "user32" (ByVal hWnd As Long, lpRect
 '**** right TreeView
 Dim data As New Access.Application
 Private Sub MakeTreeViewRTL()
+On Error Resume Next
 Dim rClientRect As RECT
 Dim ReturnStyle As Long
 ReturnStyle = GetWindowLong(TreeView1.hWnd, GWL_EXSTYLE)
@@ -1761,6 +1762,7 @@ GetClientRect TreeView1.hWnd, rClientRect
 InvalidateRect TreeView1.hWnd, rClientRect, True
 End Sub
 Private Sub couleur_treeview1()
+On Error Resume Next
 Dim lngStyle As Long
 Call SendMessage(TreeView1.hWnd, TVM_SETBKCOLOR, 0, ByVal RGB(250, 247, 13))    'Change the background 'color to red.
     ' Now reset the style so that the tree lines appear properly
@@ -1770,6 +1772,7 @@ Call SendMessage(TreeView1.hWnd, TVM_SETBKCOLOR, 0, ByVal RGB(250, 247, 13))    
 TreeView1.Sorted = True
 End Sub
 Private Sub Check1_Click(Index As Integer)
+On Error Resume Next
 Dim i As Double
 Dim k As Double
 Dim j As Double
@@ -1878,6 +1881,7 @@ Label36.Caption = "0"
 End Sub
 
 Private Sub Check13_Click()
+On Error Resume Next
 Dim i As Double
 For i = 1 To TreeView1.Nodes.Count
 TreeView1.Nodes(i).Expanded = False
@@ -1885,6 +1889,7 @@ Next i
 End Sub
 
 Private Sub Combo1_Change()
+On Error Resume Next
 If Len(Combo1.Text) > 0 Then
 'Combo1.BackColor = &HC000&
 Call chargcombo3
@@ -1897,9 +1902,11 @@ End If
 End Sub
 
 Private Sub Combo1_Click()
+On Error Resume Next
 Combo1_Change
 End Sub
 Private Sub chargcombo3()
+On Error Resume Next
 Combo3.Clear
 Call cont
 Do While Not cl.EOF
@@ -1910,6 +1917,7 @@ cl.MoveNext
 Loop
 End Sub
 Private Sub chargegrd1()
+On Error Resume Next
 Dim i As Double
 grd1.Clear
 grd1.Cols = 2
@@ -1942,6 +1950,7 @@ grd1.Col = 1
 grd1.Sort = 2
 End Sub
 Private Sub Combo2_Change()
+On Error Resume Next
 Label18.BackColor = &H8000&
 Label18.Caption = ""
 Label23.Caption = "0"
@@ -1977,10 +1986,12 @@ grd3.Visible = True
 End Sub
 
 Private Sub Combo2_Click()
+On Error Resume Next
 Combo2_Change
 End Sub
 
 Private Sub Combo3_Change()
+On Error Resume Next
 If Len(Combo3.Text) > 0 Then
 'Combo3.BackColor = &HC000&
 grd1.Visible = False
@@ -1992,10 +2003,12 @@ End If
 End Sub
 
 Private Sub Combo3_Click()
+On Error Resume Next
 Combo3_Change
 End Sub
 
 Private Sub Command1_Click()
+On Error Resume Next
 Dim a As Double
 If Combo2.Text = "" Then
 MsgBox "ÌÃ» «Œ Ì«— —ﬁ„ «·Ê’·", vbCritical
@@ -2017,6 +2030,7 @@ Set data = Nothing
 End Sub
 
 Private Sub Command2_Click()
+On Error Resume Next
 Dim x$
 Text1.Text = Trim(Text1.Text)
 If Text1.Text = "" Then
@@ -2077,6 +2091,7 @@ End Sub
 
 
 Private Sub Command3_Click()
+On Error Resume Next
 Dim tx1 As String
 Dim i As Double
 Dim n As Double
@@ -2198,6 +2213,7 @@ End Sub
 
 
 Private Sub Command4_Click()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim n As Double
@@ -2370,6 +2386,7 @@ End If
 End Sub
 
 Private Sub Command5_Click()
+On Error Resume Next
 Dim i As Double
 Dim k As Double
 Dim P As Double
@@ -2458,10 +2475,12 @@ Label21.Caption = r
 End Sub
 
 Private Sub Command6_Click()
+On Error Resume Next
 Picture4.Visible = False
 End Sub
 
 Private Sub Command7_Click()
+On Error Resume Next
 Dim i As Double
 Dim n As Double
 Dim j As Double
@@ -2528,6 +2547,7 @@ MsgBox "OK", vbInformation
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Left = 0
 Me.Top = 0
 Call cont
@@ -2540,6 +2560,7 @@ Call couleur_treeview1
 End Sub
 
 Private Sub grd1_Click()
+On Error Resume Next
 Dim i As Double
 i = grd1.Row
 If i > 0 Then
@@ -2551,6 +2572,7 @@ End If
 End Sub
 
 Private Sub grd2_Click()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 i = grd2.Row
@@ -2564,6 +2586,7 @@ End If
 End Sub
 
 Private Sub grd2_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim n As Double
@@ -2624,6 +2647,7 @@ End If
 End Sub
 
 Private Sub grd4_Click()
+On Error Resume Next
 Dim n As Double
 Dim i As Double
 Dim j As Double
@@ -2675,6 +2699,7 @@ End Sub
 
 
 Private Sub grd5_Click()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 i = grd5.Row
@@ -2695,6 +2720,7 @@ End If
 End Sub
 
 Private Sub grd6_Click()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 i = grd6.Row
@@ -2712,6 +2738,7 @@ End If
 End Sub
 
 Private Sub Label18_Click()
+On Error Resume Next
 If Label18.BackColor = &HFF& Then
 Call cont
 Do While Not ct.EOF
@@ -2726,6 +2753,7 @@ End If
 End Sub
 
 Private Sub Text1_Change()
+On Error Resume Next
 If Len(Text1.Text) > 0 Then
 Text1.BackColor = &HC000&
 Label36.Caption = "0"
@@ -2759,10 +2787,12 @@ Image1.Picture = LoadPicture(PicFile)
 End Sub
 
 Private Sub Text1_Click()
+On Error Resume Next
 Text1_Change
 End Sub
 
 Private Sub Text1_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 If KeyAscii <> 8 Then
 If KeyAscii = 46 Then
 KeyAscii = 0
@@ -2775,6 +2805,7 @@ End If
 End Sub
 
 Private Sub Text1_KeyUp(KeyCode As Integer, Shift As Integer)
+On Error Resume Next
 If Text1.Text <> "" Then
 If KeyCode = 13 Then
 Command2_Click
@@ -2784,6 +2815,7 @@ End If
 End Sub
 
 Private Sub Text2_Change()
+On Error Resume Next
 If Len(Text2.Text) > 0 Then
 Text2.BackColor = &HC000&
 Else
@@ -2793,10 +2825,12 @@ End If
 End Sub
 
 Private Sub Text2_Click()
+On Error Resume Next
 Text2_Change
 End Sub
 
 Private Sub Text2_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 If KeyAscii <> 8 Then
 If KeyAscii = 46 Then
 KeyAscii = 0
@@ -2809,6 +2843,7 @@ End If
 End Sub
 
 Private Sub Text3_Change()
+On Error Resume Next
 If Len(Text3.Text) > 0 Then
 Text3.BackColor = &HC000&
 Else
@@ -2818,10 +2853,12 @@ End If
 End Sub
 
 Private Sub Text3_Click()
+On Error Resume Next
 Text3_Change
 End Sub
 
 Private Sub Text3_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 If KeyAscii <> 8 Then
 If KeyAscii = 46 Then
 KeyAscii = 0
@@ -2834,6 +2871,7 @@ End If
 End Sub
 
 Private Sub Text4_Change()
+On Error Resume Next
 If Len(Text4.Text) > 0 Then
 Text4.BackColor = &HC000&
 Else
@@ -2843,10 +2881,12 @@ End If
 End Sub
 
 Private Sub Text4_Click()
+On Error Resume Next
 Text4_Change
 End Sub
 
 Private Sub Text4_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 If KeyAscii <> 8 Then
 If KeyAscii = 46 Then
 KeyAscii = 0
@@ -2859,6 +2899,7 @@ End If
 End Sub
 
 Private Sub Text5_Change()
+On Error Resume Next
 Dim a As Double
 Dim b As Double
 Dim c As Double
@@ -2882,10 +2923,12 @@ End If
 End Sub
 
 Private Sub Text5_Click()
+On Error Resume Next
 Text5_Change
 End Sub
 
 Private Sub Text5_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 If KeyAscii <> 8 Then
 If KeyAscii = 46 Then
 KeyAscii = 0
@@ -2898,6 +2941,7 @@ End If
 End Sub
 
 Private Sub Text6_Change()
+On Error Resume Next
 Dim a As Double
 Dim b As Double
 Dim c As Double
@@ -2922,9 +2966,11 @@ End If
 End Sub
 
 Private Sub Text6_Click()
+On Error Resume Next
 Text6_Change
 End Sub
 Private Sub chargegrd1_clear()
+On Error Resume Next
 Dim i As Double
 grd1.Clear
 grd1.Cols = 2
@@ -2940,6 +2986,7 @@ grd1.Col = 1
 grd1.Text = "«”„ «· ·„Ì–"
 End Sub
 Private Sub chargegrd_clear()
+On Error Resume Next
 Dim k As Double
 For k = 0 To 13
 Check1(k).Enabled = True
@@ -3014,6 +3061,7 @@ grd4.Col = 3
 grd4.Text = "«·»«ﬁÌ"
 End Sub
 Private Sub chargegrd4()
+On Error Resume Next
 Dim i As Double
 Dim k As Double
 grd4.Clear
@@ -3072,6 +3120,7 @@ Loop
 grd4.Rows = i
 End Sub
 Private Sub Frais_mensuel()
+On Error Resume Next
 Call cont
 Do While Not cl.EOF
 If cl!cla = Label8.Caption Then
@@ -3085,6 +3134,7 @@ cl.MoveNext
 Loop
 End Sub
 Private Sub calcul_pay_res()
+On Error Resume Next
 Dim i As Double
 Dim n As Double
 Dim P As Double
@@ -3119,6 +3169,7 @@ Label17.Caption = r
 End Sub
 
 Private Sub Text6_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 If KeyAscii <> 8 Then
 If KeyAscii = 46 Then
 KeyAscii = 0
@@ -3131,6 +3182,7 @@ End If
 End Sub
 
 Private Sub Timer1_Timer()
+On Error Resume Next
 'ProgressBar1.Value = ProgressBar1.Value + 8
 'If ProgressBar1.Value > 90 Then
 Label7.Caption = ""
@@ -3159,6 +3211,7 @@ Command4.Enabled = True
 End Sub
 
 Private Sub Timer2_Timer()
+On Error Resume Next
 ProgressBar1.Value = ProgressBar1.Value + 8
 If ProgressBar1.Value > 90 Then
 MsgBox " „  «·⁄„·Ì… »‰Ã«Õ", vbInformation + arabic
@@ -3182,6 +3235,7 @@ End If
 
 End Sub
 Private Sub calcul_prc_E_A()
+On Error Resume Next
 Dim m1 As Double
 Dim m2 As Double
 Dim m3 As Double
@@ -3209,6 +3263,7 @@ pc!nbr = "0"
 pc.Update
 End Sub
 Private Sub chargetreeview1()
+On Error Resume Next
 On Error Resume Next
 Dim id1 As String
 Dim id2 As String
@@ -3238,6 +3293,7 @@ Loop
 End Sub
 
 Private Sub TreeView1_Expand(ByVal Node As ComctlLib.Node)
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim k As Double
@@ -3252,6 +3308,7 @@ End If
 End Sub
 
 Private Sub TreeView1_NodeClick(ByVal Node As ComctlLib.Node)
+On Error Resume Next
 'Dim vg As String
 Dim n As Double
 Text1.Text = ""
@@ -3269,6 +3326,7 @@ End If
 
 End Sub
 Private Sub Operations()
+On Error Resume Next
 Dim a As Double
 Dim b As Double
 grd5.Rows = 2
@@ -3315,6 +3373,7 @@ grd5.RowHeight(1) = 250
 End If
 End Sub
 Private Sub chargegrd6()
+On Error Resume Next
 Dim i As Double
 grd6.Clear
 grd6.Rows = 1
@@ -3349,3 +3408,4 @@ ct.MoveNext
 Loop
 grd6.Rows = i
 End Sub
+

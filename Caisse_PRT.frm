@@ -573,7 +573,7 @@ Begin VB.Form Caisse_PRT
       CalendarBackColor=   16744576
       CalendarTitleBackColor=   16711680
       CalendarTrailingForeColor=   16744576
-      Format          =   107872257
+      Format          =   124977153
       CurrentDate     =   42638
    End
    Begin ComctlLib.ProgressBar ProgressBar1 
@@ -635,7 +635,7 @@ Begin VB.Form Caisse_PRT
       CalendarBackColor=   16744576
       CalendarTitleBackColor=   16711680
       CalendarTrailingForeColor=   16744576
-      Format          =   107872257
+      Format          =   124977153
       CurrentDate     =   42638
    End
    Begin MSComCtl2.DTPicker DT3 
@@ -659,7 +659,7 @@ Begin VB.Form Caisse_PRT
       CalendarBackColor=   16744576
       CalendarTitleBackColor=   16711680
       CalendarTrailingForeColor=   16744576
-      Format          =   107872257
+      Format          =   124977153
       CurrentDate     =   42638
    End
    Begin MSFlexGridLib.MSFlexGrid grd5 
@@ -931,6 +931,7 @@ Private Declare Function InvalidateRect Lib "user32" (ByVal hWnd As Long, lpRect
 '**** right TreeView
 Dim data As New Access.Application
 Private Sub MakeTreeViewRTL()
+On Error Resume Next
 Dim rClientRect As RECT
 Dim ReturnStyle As Long
 ReturnStyle = GetWindowLong(TreeView1.hWnd, GWL_EXSTYLE)
@@ -939,6 +940,7 @@ GetClientRect TreeView1.hWnd, rClientRect
 InvalidateRect TreeView1.hWnd, rClientRect, True
 End Sub
 Private Sub couleur_treeview1()
+On Error Resume Next
 Dim lngStyle As Long
 Call SendMessage(TreeView1.hWnd, TVM_SETBKCOLOR, 0, ByVal RGB(250, 247, 13))    'Change the background 'color to red.
     ' Now reset the style so that the tree lines appear properly
@@ -949,6 +951,7 @@ TreeView1.Sorted = True
 End Sub
 
 Private Sub Check13_Click()
+On Error Resume Next
 If Check13.Value = 0 Then
 grd2.Visible = False
 Call chargegrd_clear
@@ -961,6 +964,7 @@ End If
 End Sub
 
 Private Sub Combo1_Change()
+On Error Resume Next
 If Len(Combo1.Text) > 0 Then
 Combo1.BackColor = &HC000&
 Text2.SetFocus
@@ -971,14 +975,17 @@ End If
 End Sub
 
 Private Sub Combo1_Click()
+On Error Resume Next
 Combo1_Change
 End Sub
 
 Private Sub Command1_Click()
+On Error Resume Next
 Label16.Caption = "rrrrrrrrr"
 End Sub
 
 Private Sub Command2_Click()
+On Error Resume Next
 Text1.Text = Trim(Text1.Text)
 If Text1.Text = "" Then
 MsgBox "«·—Ã«¡ «œŒ«· «·—ﬁ„ «· ”·”·Ì À„ ⁄—÷ «·»Ì«‰« ", vbCritical + arabic
@@ -1025,11 +1032,13 @@ Text1.SetFocus
 End Sub
 
 Private Sub Command6_Click()
+On Error Resume Next
 Picture4.Visible = False
 
 End Sub
 
 Private Sub Command7_Click()
+On Error Resume Next
 Check13.Value = 0
 grd2.Visible = False
 Call chargegrd2
@@ -1037,6 +1046,7 @@ grd2.Visible = True
 End Sub
 
 Private Sub Command8_Click()
+On Error Resume Next
 Text2.Text = ""
 Text3.Text = ""
 Text2.SetFocus
@@ -1056,6 +1066,7 @@ Call Operations
 End Sub
 
 Private Sub Command9_Click()
+On Error Resume Next
 Dim a As Double
 Dim b As Double
 Dim c As Double
@@ -1160,6 +1171,7 @@ Timer1.Enabled = True
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Left = 0
 Me.Top = 0
 'Call chargegrd1
@@ -1172,6 +1184,7 @@ DT3.Value = Date
 Call Operations
 End Sub
 Private Sub chargegrd2()
+On Error Resume Next
 Dim i As Double
 Dim dat1 As Date
 Dim dat2 As Date
@@ -1279,6 +1292,7 @@ Label12.Caption = ""
 End If
 End Sub
 Private Sub chargegrd2_T()
+On Error Resume Next
 Dim i As Double
 Dim dat1 As Date
 Dim dat2 As Date
@@ -1385,6 +1399,7 @@ End If
 End Sub
 
 Private Sub grd2_Click()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim a As Double
@@ -1482,6 +1497,7 @@ End Sub
 
 
 Private Sub grd5_Click()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim k As Double
@@ -1508,6 +1524,7 @@ End If
 End Sub
 
 Private Sub grd6_Click()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 i = grd6.Row
@@ -1528,6 +1545,7 @@ End If
 End Sub
 
 Private Sub Text1_Change()
+On Error Resume Next
 If Len(Text1.Text) > 0 Then
 Text1.BackColor = &HC000&
 Check13.Value = 0
@@ -1546,10 +1564,12 @@ End If
 End Sub
 
 Private Sub Text1_Click()
+On Error Resume Next
 Text1_Change
 End Sub
 
 Private Sub Text2_Change()
+On Error Resume Next
 If Len(Text2.Text) > 0 Then
 Text2.BackColor = &HC000&
 Else
@@ -1559,10 +1579,12 @@ End If
 End Sub
 
 Private Sub Text2_Click()
+On Error Resume Next
 Text2_Change
 End Sub
 
 Private Sub Text2_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 If KeyAscii <> 8 Then
 If KeyAscii = 46 Then
 KeyAscii = 0
@@ -1575,6 +1597,7 @@ End If
 End Sub
 
 Private Sub Timer1_Timer()
+On Error Resume Next
 ProgressBar1.Value = ProgressBar1.Value + 8
 If ProgressBar1.Value > 90 Then
 MsgBox " „  «·⁄„·Ì… »‰Ã«Õ", vbInformation + arabic
@@ -1584,6 +1607,7 @@ End If
 
 End Sub
 Private Sub chargegrd_clear()
+On Error Resume Next
 grd2.Clear
 grd2.Cols = 5
 grd2.Rows = 1
@@ -1608,6 +1632,7 @@ grd2.Col = 4
 grd2.Text = "«· ›«’Ì·"
 End Sub
 Private Sub chargetreeview1()
+On Error Resume Next
 Dim id1 As String
 Dim id2 As String
 Dim i As Double
@@ -1625,6 +1650,7 @@ pr.MoveNext
 Loop
 End Sub
 Private Sub TreeView1_NodeClick(ByVal Node As ComctlLib.Node)
+On Error Resume Next
 Dim n As Double
 Text4.Text = Node.Key
 n = Len(Text4.Text)
@@ -1636,6 +1662,7 @@ Command2_Click
 End If
 End Sub
 Private Sub Operations()
+On Error Resume Next
 Dim a As Double
 Dim b As Double
 grd5.Rows = 2
@@ -1680,6 +1707,7 @@ grd5.RowHeight(1) = 250
 End If
 End Sub
 Private Sub chargegrd6()
+On Error Resume Next
 Dim i As Double
 Dim tx As String
 grd6.Clear
@@ -1720,3 +1748,4 @@ cp.MoveNext
 Loop
 grd6.Rows = i
 End Sub
+

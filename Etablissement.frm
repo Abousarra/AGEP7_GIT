@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{8E515444-86DF-11D3-A630-444553540001}#1.0#0"; "barcodex.ocx"
 Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "comctl32.ocx"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form Etablissement 
    BackColor       =   &H00008000&
    BorderStyle     =   0  'None
@@ -522,6 +522,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
 Private Sub Combo1_Change()
+On Error Resume Next
 If Len(Combo1.Text) > 0 Then
 Combo1.BackColor = &HC000&
 Else
@@ -531,10 +532,12 @@ End If
 End Sub
 
 Private Sub Combo1_Click()
+On Error Resume Next
 Combo1_Change
 End Sub
 
 Private Sub Combo2_Change()
+On Error Resume Next
 If Len(Combo2.Text) > 0 Then
 Combo2.BackColor = &HC000&
 Else
@@ -544,10 +547,12 @@ End If
 End Sub
 
 Private Sub Combo2_Click()
+On Error Resume Next
 Combo2_Change
 End Sub
 
 Private Sub Command1_Click()
+On Error Resume Next
 Dim a As Double
 Dim b As Double
 Text1.Text = Trim(Text1.Text)
@@ -598,6 +603,7 @@ Interface.SBB1.Panels(3).Text = eb!eta
 End Sub
 
 Private Sub Command2_Click()
+On Error Resume Next
 On Error GoTo P
 PicFile = ""
     CommonDialog1.CancelError = True
@@ -616,6 +622,7 @@ PicFile = ""
 End Sub
 
 Private Sub Command3_Click()
+On Error Resume Next
 On Error GoTo P
 PicFile = ""
     CommonDialog1.CancelError = True
@@ -634,6 +641,7 @@ PicFile = ""
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Dim x$
 Me.Left = 0
 Me.Top = 0
@@ -653,6 +661,7 @@ Image2.Picture = LoadPicture(PicFile)
 End If
 End Sub
 Private Sub chargcombo1()
+On Error Resume Next
 Combo1.Clear
 Call cont
 Do While Not an.EOF
@@ -684,6 +693,7 @@ End Sub
 
 
 Private Sub Text1_Change()
+On Error Resume Next
 Label9.Caption = Text1.Text
 If Len(Text1.Text) > 0 Then
 Text1.BackColor = &HC000&
@@ -694,10 +704,12 @@ End If
 End Sub
 
 Private Sub Text1_Click()
+On Error Resume Next
 Text1_Change
 End Sub
 
 Private Sub Text2_Change()
+On Error Resume Next
 Dim a As Double
 Dim b As Double
 a = Val(Text2.Text)
@@ -712,10 +724,12 @@ End If
 End Sub
 
 Private Sub Text2_Click()
+On Error Resume Next
 Text2_Change
 End Sub
 
 Private Sub Text2_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 If KeyAscii <> 8 Then
 If KeyAscii < 46 Or KeyAscii > 57 Or KeyAscii = 47 Then
 KeyAscii = 0
@@ -725,6 +739,7 @@ End If
 End Sub
 
 Private Sub Text3_Change()
+On Error Resume Next
 If Len(Text3.Text) > 0 Then
 Text3.BackColor = &HC000&
 Else
@@ -734,10 +749,12 @@ End If
 End Sub
 
 Private Sub Text3_Click()
+On Error Resume Next
 Text3_Change
 End Sub
 
 Private Sub Text4_Change()
+On Error Resume Next
 If Len(Text4.Text) > 0 Then
 xe = Text4.Text
 Call Series
@@ -750,10 +767,12 @@ End If
 End Sub
 
 Private Sub Text4_Click()
+On Error Resume Next
 Text4_Change
 End Sub
 
 Private Sub Text4_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 If KeyAscii <> 8 Then
 If Len(Text4.Text) > 8 Then
 KeyAscii = 0
@@ -769,6 +788,7 @@ End If
 End Sub
 
 Private Sub Text5_Change()
+On Error Resume Next
 If Len(Text5.Text) > 0 Then
 Text5.BackColor = &HC000&
 Else
@@ -778,10 +798,12 @@ End If
 End Sub
 
 Private Sub Text5_Click()
+On Error Resume Next
 Text5_Change
 End Sub
 
 Private Sub Text5_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 If KeyAscii <> 8 Then
 If Len(Text4.Text) > 8 Then
 KeyAscii = 0
@@ -797,6 +819,7 @@ End If
 End Sub
 
 Private Sub active()
+On Error Resume Next
 Call cont
 If sr.RecordCount = 0 Then
 eb!sri = eb!ser

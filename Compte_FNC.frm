@@ -88,7 +88,7 @@ Begin VB.Form Compte_FNC
          CalendarBackColor=   16744576
          CalendarTitleBackColor=   16711680
          CalendarTrailingForeColor=   16744576
-         Format          =   99418113
+         Format          =   124977153
          CurrentDate     =   42638
       End
       Begin VB.Label Label24 
@@ -689,7 +689,7 @@ Begin VB.Form Compte_FNC
             CalendarBackColor=   16744576
             CalendarTitleBackColor=   16711680
             CalendarTrailingForeColor=   16744576
-            Format          =   99418113
+            Format          =   124977153
             CurrentDate     =   42638
          End
          Begin ComctlLib.ProgressBar ProgressBar2 
@@ -724,7 +724,7 @@ Begin VB.Form Compte_FNC
             CalendarBackColor=   16744576
             CalendarTitleBackColor=   16711680
             CalendarTrailingForeColor=   16744576
-            Format          =   99418113
+            Format          =   124977153
             CurrentDate     =   42638
          End
          Begin MSComCtl2.DTPicker DT6 
@@ -748,7 +748,7 @@ Begin VB.Form Compte_FNC
             CalendarBackColor=   16744576
             CalendarTitleBackColor=   16711680
             CalendarTrailingForeColor=   16744576
-            Format          =   99418113
+            Format          =   124977153
             CurrentDate     =   42638
          End
          Begin VB.Label Label11 
@@ -1631,6 +1631,7 @@ Private Declare Function InvalidateRect Lib "user32" (ByVal hWnd As Long, lpRect
 '**** right TreeView
 Dim data As New Access.Application
 Private Sub MakeTreeViewRTL()
+On Error Resume Next
 Dim rClientRect As RECT
 Dim ReturnStyle As Long
 ReturnStyle = GetWindowLong(TreeView1.hWnd, GWL_EXSTYLE)
@@ -1639,6 +1640,7 @@ GetClientRect TreeView1.hWnd, rClientRect
 InvalidateRect TreeView1.hWnd, rClientRect, True
 End Sub
 Private Sub couleur_treeview1()
+On Error Resume Next
 Dim lngStyle As Long
 Call SendMessage(TreeView1.hWnd, TVM_SETBKCOLOR, 0, ByVal RGB(250, 247, 13))    'Change the background 'color to red.
     ' Now reset the style so that the tree lines appear properly
@@ -1649,6 +1651,7 @@ TreeView1.Sorted = True
 End Sub
 
 Private Sub chargetreeview1()
+On Error Resume Next
 Dim id1 As String
 Dim id2 As String
 Dim i As Double
@@ -1667,6 +1670,7 @@ Loop
 End Sub
 
 Private Sub Combo1_Change()
+On Error Resume Next
 If Len(Combo1.Text) > 0 Then
 Combo1.BackColor = &HC000&
 Call tous_clear
@@ -1676,10 +1680,12 @@ End If
 End Sub
 
 Private Sub Combo1_Click()
+On Error Resume Next
 Combo1_Change
 End Sub
 
 Private Sub Command1_Click()
+On Error Resume Next
 Text1.Text = Trim(Text1.Text)
 If Text1.Text = "" Then
 MsgBox "ÇáÑÌÇÁ ÇÏÎÇá ÇáÑÞã ÇáÊÓáÓáí ", vbCritical + arabic
@@ -1722,6 +1728,7 @@ End Sub
 
 
 Private Sub Command2_Click()
+On Error Resume Next
 Text1.Text = Trim(Text1.Text)
 If Text1.Text = "" Then
 MsgBox "ÇáÑÌÇÁ ÇÏÎÇá ÇáÑÞã ÇáÊÓáÓáí Ëã ÇáÖÛØ Úáì ÚÑÖ", vbCritical + arabic
@@ -1748,6 +1755,7 @@ End If
 End Sub
 
 Private Sub Command3_Click()
+On Error Resume Next
 Text4.Text = Trim(Text4.Text)
 Text5.Text = Trim(Text5.Text)
 Text6.Text = Trim(Text6.Text)
@@ -1786,6 +1794,7 @@ Loop
 End Sub
 
 Private Sub Command8_Click()
+On Error Resume Next
 grd1.Visible = False
 grd2.Visible = False
 If Option2.Value = True Then
@@ -1799,6 +1808,7 @@ grd2.Visible = True
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Left = 0
 Me.Top = 0
 Call MakeTreeViewRTL
@@ -1806,6 +1816,7 @@ Call chargetreeview1
 Call couleur_treeview1
 End Sub
 Private Sub chargegrd1_2_T()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim m As Double
@@ -1907,6 +1918,7 @@ Label22.Caption = r
 Label15.Caption = r
 End Sub
 Private Sub chargegrd1_2_M()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim m As Double
@@ -2013,16 +2025,19 @@ Label22.Caption = r
 End Sub
 
 Private Sub Option1_Click()
+On Error Resume Next
 Combo1.Visible = True
 Call tous_clear
 End Sub
 
 Private Sub Option2_Click()
+On Error Resume Next
 Combo1.Visible = False
 Call tous_clear
 End Sub
 
 Private Sub Text1_Change()
+On Error Resume Next
 If Len(Text1.Text) > 0 Then
 Text1.BackColor = &HC000&
 Picture2.Visible = True
@@ -2039,10 +2054,12 @@ Text6.Text = ""
 End Sub
 
 Private Sub Text1_Click()
+On Error Resume Next
 Text1_Change
 End Sub
 
 Private Sub Text2_Change()
+On Error Resume Next
 If Len(Text2.Text) > 0 Then
 Text2.BackColor = &HC000&
 Else
@@ -2052,10 +2069,12 @@ End If
 End Sub
 
 Private Sub Text2_Click()
+On Error Resume Next
 Text2_Change
 End Sub
 
 Private Sub Text4_Change()
+On Error Resume Next
 If Len(Text4.Text) > 0 Then
 Text4.BackColor = &HC000&
 Else
@@ -2065,10 +2084,12 @@ End If
 End Sub
 
 Private Sub Text4_Click()
+On Error Resume Next
 Text4_Change
 End Sub
 
 Private Sub Text5_Change()
+On Error Resume Next
 If Len(Text5.Text) > 0 Then
 Text5.BackColor = &HC000&
 Else
@@ -2078,10 +2099,12 @@ End If
 End Sub
 
 Private Sub Text5_Click()
+On Error Resume Next
 Text5_Change
 End Sub
 
 Private Sub Text6_Change()
+On Error Resume Next
 If Len(Text6.Text) > 0 Then
 Text6.BackColor = &HC000&
 Else
@@ -2091,10 +2114,12 @@ End If
 End Sub
 
 Private Sub Text6_Click()
+On Error Resume Next
 Text6_Change
 End Sub
 
 Private Sub TreeView1_NodeClick(ByVal Node As ComctlLib.Node)
+On Error Resume Next
 Dim n As Double
 Text3.Text = Node.Key
 n = Len(Text3.Text)
@@ -2109,6 +2134,7 @@ End Sub
 
 
 Private Sub tous_clear()
+On Error Resume Next
 Label17.Caption = "0"
 Label9.Caption = "0"
 Label22.Caption = "0"

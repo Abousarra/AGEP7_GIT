@@ -438,7 +438,7 @@ Begin VB.Form Pointage_P
          CalendarBackColor=   16744576
          CalendarTitleBackColor=   16711680
          CalendarTrailingForeColor=   16744576
-         Format          =   102825985
+         Format          =   124977153
          CurrentDate     =   42638
       End
       Begin ComctlLib.ProgressBar ProgressBar1 
@@ -473,7 +473,7 @@ Begin VB.Form Pointage_P
          CalendarBackColor=   16744576
          CalendarTitleBackColor=   16711680
          CalendarTrailingForeColor=   16744576
-         Format          =   102825985
+         Format          =   124977153
          CurrentDate     =   42638
       End
       Begin MSComCtl2.DTPicker DT3 
@@ -497,7 +497,7 @@ Begin VB.Form Pointage_P
          CalendarBackColor=   16744576
          CalendarTitleBackColor=   16711680
          CalendarTrailingForeColor=   16744576
-         Format          =   102825985
+         Format          =   124977153
          CurrentDate     =   42638
       End
       Begin VB.Label Label5 
@@ -916,6 +916,7 @@ Private Declare Function InvalidateRect Lib "user32" (ByVal hWnd As Long, lpRect
 '**** right TreeView
 Dim data As New Access.Application
 Private Sub MakeTreeViewRTL()
+On Error Resume Next
 Dim rClientRect As RECT
 Dim ReturnStyle As Long
 ReturnStyle = GetWindowLong(TreeView1.hWnd, GWL_EXSTYLE)
@@ -924,6 +925,7 @@ GetClientRect TreeView1.hWnd, rClientRect
 InvalidateRect TreeView1.hWnd, rClientRect, True
 End Sub
 Private Sub couleur_treeview1()
+On Error Resume Next
 Dim lngStyle As Long
 Call SendMessage(TreeView1.hWnd, TVM_SETBKCOLOR, 0, ByVal RGB(250, 247, 13))    'Change the background 'color to red.
     ' Now reset the style so that the tree lines appear properly
@@ -934,6 +936,7 @@ TreeView1.Sorted = True
 End Sub
 
 Private Sub chargetreeview1()
+On Error Resume Next
 Dim id1 As String
 Dim id2 As String
 Dim i As Double
@@ -952,6 +955,7 @@ Loop
 End Sub
 
 Private Sub Combo1_Change()
+On Error Resume Next
 If Len(Combo1.Text) > 0 Then
 Combo1.BackColor = &HC000&
 Combo3.Clear
@@ -966,10 +970,12 @@ End If
 End Sub
 
 Private Sub Combo1_Click()
+On Error Resume Next
 Combo1_Change
 End Sub
 
 Private Sub Combo2_Change()
+On Error Resume Next
 If Len(Combo2.Text) > 0 Then
 Combo2.BackColor = &HC000&
 Call chargcombo1
@@ -981,10 +987,12 @@ End If
 End Sub
 
 Private Sub Combo2_Click()
+On Error Resume Next
 Combo2_Change
 End Sub
 
 Private Sub Combo3_Change()
+On Error Resume Next
 If Len(Combo3.Text) > 0 Then
 If Combo3.Text = "»«·”«⁄…" Then
 Label10.Caption = "H"
@@ -1032,10 +1040,12 @@ End If
 End Sub
 
 Private Sub Combo3_Click()
+On Error Resume Next
 Combo3_Change
 End Sub
 
 Private Sub Combo4_Change()
+On Error Resume Next
 Label10.Caption = ""
 If Combo4.Text = "»«·”«⁄…" Then
 Label10.Caption = "H"
@@ -1049,10 +1059,12 @@ Call chargegrd_clear
 End Sub
 
 Private Sub Combo4_Click()
+On Error Resume Next
 Combo4_Change
 End Sub
 
 Private Sub Combo7_Change()
+On Error Resume Next
 If Len(Combo7.Text) > 0 Then
 Combo7.BackColor = &HC000&
 Else
@@ -1062,10 +1074,12 @@ End If
 End Sub
 
 Private Sub Combo7_Click()
+On Error Resume Next
 Combo7_Change
 End Sub
 
 Private Sub Command1_Click()
+On Error Resume Next
 Call cont3
 Do While Not pp3.EOF
 Call cont
@@ -1097,6 +1111,7 @@ MsgBox "OK", vbInformation
 End Sub
 
 Private Sub Command2_Click()
+On Error Resume Next
 Text1.Text = Trim(Text1.Text)
 If Text1.Text = "" Then
 MsgBox "«·—Ã«¡ «œŒ«· «·—ﬁ„ «· ”·”·Ì À„ ⁄—÷ «·»Ì«‰« ", vbCritical + arabic
@@ -1138,6 +1153,7 @@ Text1.SetFocus
 End Sub
 
 Private Sub Command4_Click()
+On Error Resume Next
 Dim cl1 As String
 Dim cl2 As String
 Dim niv1 As String
@@ -1163,6 +1179,7 @@ MsgBox "OK", vbInformation
 End Sub
 
 Private Sub Command5_Click()
+On Error Resume Next
 Call cont2
 Do While Not pp2.EOF
 If pp2!eta = "P" Then
@@ -1226,6 +1243,7 @@ MsgBox "OK", vbInformation
 End Sub
 
 Private Sub Command7_Click()
+On Error Resume Next
 grd1.Visible = False
 Call chargegrd1_T
 grd1.Visible = True
@@ -1233,6 +1251,7 @@ grd1.Visible = True
 End Sub
 
 Private Sub Command8_Click()
+On Error Resume Next
 DT1.Enabled = True
 Combo2.Enabled = True
 Combo1.Enabled = True
@@ -1261,6 +1280,7 @@ Timer1.Enabled = False
 End Sub
 
 Private Sub Command9_Click()
+On Error Resume Next
 Dim x$
 Text1.Text = Trim(Text1.Text)
 Text2.Text = Trim(Text2.Text)
@@ -1335,6 +1355,7 @@ Timer1.Enabled = True
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Left = 0
 Me.Top = 0
 'DT1.Value = Date
@@ -1349,6 +1370,7 @@ End Sub
 
 
 Private Sub grd1_Click()
+On Error Resume Next
 Dim i As Double
 Dim j As Double
 Dim au As Double
@@ -1454,6 +1476,7 @@ End If
 End Sub
 
 Private Sub Text1_Change()
+On Error Resume Next
 If Len(Text1.Text) > 0 Then
 Text1.BackColor = &HC000&
 Else
@@ -1472,10 +1495,12 @@ Picture1.Visible = False
 End Sub
 
 Private Sub Text1_Click()
+On Error Resume Next
 Text1_Change
 End Sub
 
 Private Sub Text2_Change()
+On Error Resume Next
 If Len(Text2.Text) > 0 Then
 Text2.BackColor = &HC000&
 Else
@@ -1486,10 +1511,12 @@ End If
 End Sub
 
 Private Sub Text2_Click()
+On Error Resume Next
 Text2_Change
 End Sub
 
 Private Sub Text2_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 If KeyAscii <> 8 Then
 If KeyAscii = 46 Then
 KeyAscii = 0
@@ -1512,10 +1539,12 @@ End If
 End Sub
 
 Private Sub Text4_Click()
+On Error Resume Next
 Text4_Change
 End Sub
 
 Private Sub Text4_KeyPress(KeyAscii As Integer)
+On Error Resume Next
 If KeyAscii <> 8 Then
 If KeyAscii = 46 Then
 KeyAscii = 0
@@ -1528,6 +1557,7 @@ End If
 End Sub
 
 Private Sub Timer1_Timer()
+On Error Resume Next
 ProgressBar1.Value = ProgressBar1.Value + 8
 If ProgressBar1.Value > 90 Then
 MsgBox " „  «·⁄„·Ì… »‰Ã«Õ", vbInformation + arabic
@@ -1537,6 +1567,7 @@ End If
 End Sub
 
 Private Sub TreeView1_NodeClick(ByVal Node As ComctlLib.Node)
+On Error Resume Next
 Dim n As Double
 Text11.Text = Node.Key
 n = Len(Text11.Text)
@@ -1549,6 +1580,7 @@ End If
 
 End Sub
 Private Sub chargcombo1()
+On Error Resume Next
 Combo1.Clear
 Call cont
 Do While Not cl.EOF
@@ -1559,6 +1591,7 @@ cl.MoveNext
 Loop
 End Sub
 Private Sub chargegrd1_T()
+On Error Resume Next
 Dim dat1 As Date
 Dim dat2 As Date
 Dim dat3 As Date
@@ -1614,6 +1647,7 @@ Loop
 grd1.Rows = i
 End Sub
 Private Sub chargegrd1_M()
+On Error Resume Next
 Dim dat1 As Date
 Dim dat2 As Date
 Dim dat3 As Date
@@ -1669,6 +1703,7 @@ Loop
 grd1.Rows = i
 End Sub
 Private Sub chargegrd_clear()
+On Error Resume Next
 grd1.Clear
 grd1.Cols = 11
 grd1.Rows = 1
@@ -1713,6 +1748,7 @@ grd1.Text = "«· ›«’Ì·"
 
 End Sub
 Private Sub Pourcentage()
+On Error Resume Next
 Dim n1 As Double
 Dim m1 As Double
 Dim n2 As Double
@@ -1771,4 +1807,6 @@ pc!nbr = n2
 pc.Update
 End If
 End Sub
+
+
 

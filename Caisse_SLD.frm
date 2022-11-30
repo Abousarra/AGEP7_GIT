@@ -332,7 +332,7 @@ Begin VB.Form Caisse_SLD
             CalendarBackColor=   16744576
             CalendarTitleBackColor=   16711680
             CalendarTrailingForeColor=   16744576
-            Format          =   99352577
+            Format          =   124977153
             CurrentDate     =   42638
          End
          Begin MSComCtl2.DTPicker DT3 
@@ -356,7 +356,7 @@ Begin VB.Form Caisse_SLD
             CalendarBackColor=   16744576
             CalendarTitleBackColor=   16711680
             CalendarTrailingForeColor=   16744576
-            Format          =   99352577
+            Format          =   124977153
             CurrentDate     =   42638
          End
          Begin VB.TextBox Text1 
@@ -397,7 +397,7 @@ Begin VB.Form Caisse_SLD
             CalendarBackColor=   16744576
             CalendarTitleBackColor=   16711680
             CalendarTrailingForeColor=   16744576
-            Format          =   99352577
+            Format          =   124977153
             CurrentDate     =   42638
          End
          Begin VB.Label Label17 
@@ -658,7 +658,7 @@ Begin VB.Form Caisse_SLD
       CalendarBackColor=   16744576
       CalendarTitleBackColor=   16711680
       CalendarTrailingForeColor=   16744576
-      Format          =   99352577
+      Format          =   124977153
       CurrentDate     =   42638
    End
    Begin VB.Label Label24 
@@ -1297,15 +1297,18 @@ Dim dp2 As Double
 Dim tl1 As Double
 Dim tl2 As Double
 Private Sub Combo1_Change()
+On Error Resume Next
 Call grds_clear
 
 End Sub
 
 Private Sub Combo1_Click()
+On Error Resume Next
 Combo1_Change
 End Sub
 
 Private Sub Command7_Click()
+On Error Resume Next
 If Option1.Value = False And Option2.Value = False And Option3.Value = False Then
 MsgBox "ÌÃ»  ÕœÌœ √Õœ «·ŒÌ«—«  ⁄·Ï «·Ì„Ì‰", vbCritical
 Exit Sub
@@ -1379,15 +1382,18 @@ Command7.Enabled = True
 End Sub
 
 Private Sub DT1_Change()
+On Error Resume Next
 Call grds_clear
 
 End Sub
 
 Private Sub DT1_Click()
+On Error Resume Next
 DT1_Change
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Left = 0
 Me.Top = 0
 Call grds_clear
@@ -1397,12 +1403,14 @@ End Sub
 
 
 Private Sub Option1_Click()
+On Error Resume Next
 DT1.Visible = True
 Combo1.Visible = False
 Call grds_clear
 End Sub
 
 Private Sub Option2_Click()
+On Error Resume Next
 Call grds_clear
 DT1.Visible = False
 Combo1.Visible = True
@@ -1410,11 +1418,13 @@ Combo1.Visible = True
 End Sub
 
 Private Sub Option3_Click()
+On Error Resume Next
 Call grds_clear
 DT1.Visible = False
 Combo1.Visible = False
 End Sub
 Private Sub chargegrd1_T()
+On Error Resume Next
 Dim i As Double
 Dim dat1 As Date
 Dim dat2 As Date
@@ -1500,6 +1510,7 @@ Label5.Caption = P
 Label1.Caption = r
 End Sub
 Private Sub chargegrd1_D()
+On Error Resume Next
 Dim i As Double
 Dim dat1 As Date
 Dim dat2 As Date
@@ -1598,6 +1609,7 @@ Label5.Caption = P
 Label1.Caption = r
 End Sub
 Private Sub chargegrd1_M()
+On Error Resume Next
 Dim j1 As Double
 Dim j2 As Double
 Dim i As Double
@@ -1699,6 +1711,7 @@ Label5.Caption = P
 Label1.Caption = r
 End Sub
 Private Sub chargegrd2_T()
+On Error Resume Next
 Dim i As Double
 Dim dat1 As Date
 Dim dat2 As Date
@@ -1777,6 +1790,7 @@ s = (P - r)
 Label7.Caption = P
 End Sub
 Private Sub chargegrd2_D()
+On Error Resume Next
 Dim i As Double
 Dim dat1 As Date
 Dim dat2 As Date
@@ -1866,6 +1880,7 @@ s = (P - r)
 Label7.Caption = P
 End Sub
 Private Sub chargegrd2_M()
+On Error Resume Next
 Dim i As Double
 Dim j1 As Double
 Dim j2 As Double
@@ -1960,6 +1975,7 @@ Label7.Caption = P
 End Sub
 
 Private Sub chargegrd3_T()
+On Error Resume Next
 Dim i As Double
 Dim dat1 As Date
 Dim dat2 As Date
@@ -2044,6 +2060,7 @@ Label6.Caption = P
 Label2.Caption = r
 End Sub
 Private Sub chargegrd3_D()
+On Error Resume Next
 Dim i As Double
 Dim dat1 As Date
 Dim dat2 As Date
@@ -2141,6 +2158,7 @@ Label6.Caption = P
 Label2.Caption = r
 End Sub
 Private Sub chargegrd3_M()
+On Error Resume Next
 Dim i As Double
 Dim j1 As Double
 Dim j2 As Double
@@ -2242,6 +2260,7 @@ Label6.Caption = P
 Label2.Caption = r
 End Sub
 Private Sub chargegrd4_T()
+On Error Resume Next
 Dim i As Double
 Dim dat1 As Date
 Dim dat2 As Date
@@ -2331,6 +2350,7 @@ grd4.Sort = 2
 Label3.Caption = P
 End Sub
 Private Sub chargegrd4_D()
+On Error Resume Next
 Dim i As Double
 Dim dat1 As Date
 Dim dat2 As Date
@@ -2428,6 +2448,7 @@ grd4.Sort = 2
 Label3.Caption = P
 End Sub
 Private Sub chargegrd4_M()
+On Error Resume Next
 Dim i As Double
 Dim j1 As Double
 Dim j2 As Double
@@ -2529,6 +2550,7 @@ grd4.Sort = 2
 Label3.Caption = P
 End Sub
 Private Sub chargegrd5_T()
+On Error Resume Next
 Dim a As Double
 Dim i As Double
 Dim dat1 As Date
@@ -2588,6 +2610,7 @@ grd5.Rows = i
 Label9.Caption = sd
 End Sub
 Private Sub chargegrd5_D()
+On Error Resume Next
 Dim a As Double
 Dim i As Double
 Dim dat1 As Date
@@ -2656,6 +2679,7 @@ grd5.Rows = i
 Label9.Caption = sd
 End Sub
 Private Sub chargegrd5_M()
+On Error Resume Next
 Dim a As Double
 Dim i As Double
 Dim j1 As Double
@@ -2728,6 +2752,7 @@ grd5.Rows = i
 Label9.Caption = sd
 End Sub
 Private Sub chargegrd6_T()
+On Error Resume Next
 Dim i As Double
 Dim dat1 As Date
 Dim dat2 As Date
@@ -2812,6 +2837,7 @@ Label8.Caption = P
 Label4.Caption = r
 End Sub
 Private Sub chargegrd6_D()
+On Error Resume Next
 Dim i As Double
 Dim dat1 As Date
 Dim dat2 As Date
@@ -2909,6 +2935,7 @@ Label8.Caption = P
 Label4.Caption = r
 End Sub
 Private Sub chargegrd6_M()
+On Error Resume Next
 Dim i As Double
 Dim j1 As Double
 Dim j2 As Double
@@ -3011,6 +3038,7 @@ Label4.Caption = r
 End Sub
 
 Private Sub solde_T()
+On Error Resume Next
 Dim a As Double
 Dim b As Double
 Dim c As Double
@@ -3044,6 +3072,7 @@ Label16.Caption = s2
 Label17.Caption = (s1 - s2)
 End Sub
 Private Sub grds_clear()
+On Error Resume Next
 grd1.Clear
 grd1.Cols = 7
 grd1.Rows = 1
@@ -3236,6 +3265,7 @@ Label16.Caption = "0"
 Label17.Caption = "0"
 End Sub
 Private Sub chargegrd10()
+On Error Resume Next
 grd10.Clear
 grd10.Cols = 2
 grd10.Rows = 6
@@ -3270,3 +3300,4 @@ grd10.Text = bn2
 grd10.Row = 5
 grd10.Text = tl2
 End Sub
+

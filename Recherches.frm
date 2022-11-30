@@ -608,6 +608,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
 Private Sub Command2_Click()
+On Error Resume Next
 Text1.Text = Trim(Text1.Text)
 Text2.Text = Trim(Text2.Text)
 Text3.Text = Trim(Text3.Text)
@@ -644,11 +645,13 @@ grd1.Visible = True
 End Sub
 
 Private Sub Form_Load()
+On Error Resume Next
 Me.Top = 0
 Me.Left = 0
 End Sub
 
 Private Sub Option1_Click()
+On Error Resume Next
 grd1.Visible = False
 Call grd1_clear
 grd1.Visible = True
@@ -667,6 +670,7 @@ Text10.Visible = False
 End Sub
 
 Private Sub Option2_Click()
+On Error Resume Next
 grd1.Visible = False
 Call grd1_clear
 grd1.Visible = True
@@ -686,6 +690,7 @@ Text10.Visible = True
 End Sub
 
 Private Sub Option3_Click()
+On Error Resume Next
 grd1.Visible = False
 Call grd1_clear
 grd1.Visible = True
@@ -705,6 +710,7 @@ Text10.Visible = False
 End Sub
 
 Private Sub Option4_Click()
+On Error Resume Next
 grd1.Visible = False
 Call grd1_clear
 grd1.Visible = True
@@ -724,6 +730,7 @@ Text10.Visible = True
 End Sub
 
 Private Sub Option5_Click()
+On Error Resume Next
 grd1.Visible = False
 Call grd1_clear
 grd1.Visible = True
@@ -742,6 +749,7 @@ Text10.Visible = False
 
 End Sub
 Private Sub chargegrd1_1()
+On Error Resume Next
 Dim i As Double
 i = 1
 Call cont
@@ -773,6 +781,7 @@ grd1.Col = 1
 grd1.Sort = 1
 End Sub
 Private Sub chargegrd1_2()
+On Error Resume Next
 Dim i As Double
 i = 1
 Call cont
@@ -806,6 +815,7 @@ grd1.Col = 1
 grd1.Sort = 1
 End Sub
 Private Sub chargegrd1_3()
+On Error Resume Next
 Dim i As Double
 i = 1
 Call cont
@@ -839,6 +849,7 @@ grd1.Col = 1
 grd1.Sort = 1
 End Sub
 Private Sub chargegrd1_4()
+On Error Resume Next
 Dim i As Double
 i = 1
 Call cont
@@ -872,6 +883,7 @@ grd1.Col = 1
 grd1.Sort = 1
 End Sub
 Private Sub chargegrd1_5()
+On Error Resume Next
 Dim i As Double
 i = 1
 Call cont
@@ -907,6 +919,7 @@ grd1.Col = 1
 grd1.Sort = 1
 End Sub
 Private Sub grd1_clear()
+On Error Resume Next
 grd1.Clear
 grd1.Cols = 11
 grd1.Rows = 1
@@ -1006,6 +1019,7 @@ grd1.Text = "«·ÊŸÌ›…"
 End Sub
 
 Private Sub Text1_Change()
+On Error Resume Next
 grd1.Visible = False
 Call grd1_clear
 grd1.Visible = True
@@ -1013,10 +1027,12 @@ grd1.Visible = True
 End Sub
 
 Private Sub Text1_Click()
+On Error Resume Next
 Text1_Change
 End Sub
 
 Private Sub Text10_Change()
+On Error Resume Next
 grd1.Visible = False
 Call grd1_clear
 grd1.Visible = True
@@ -1024,10 +1040,12 @@ grd1.Visible = True
 End Sub
 
 Private Sub Text10_Click()
+On Error Resume Next
 Text10_Change
 End Sub
 
 Private Sub Text2_Change()
+On Error Resume Next
 grd1.Visible = False
 Call grd1_clear
 grd1.Visible = True
@@ -1035,10 +1053,12 @@ grd1.Visible = True
 End Sub
 
 Private Sub Text2_Click()
+On Error Resume Next
 Text2_Change
 End Sub
 
 Private Sub Text3_Change()
+On Error Resume Next
 grd1.Visible = False
 Call grd1_clear
 grd1.Visible = True
@@ -1046,10 +1066,12 @@ grd1.Visible = True
 End Sub
 
 Private Sub Text3_Click()
+On Error Resume Next
 Text3_Change
 End Sub
 
 Private Sub Text4_Change()
+On Error Resume Next
 grd1.Visible = False
 Call grd1_clear
 grd1.Visible = True
@@ -1057,10 +1079,12 @@ grd1.Visible = True
 End Sub
 
 Private Sub Text4_Click()
+On Error Resume Next
 Text4_Change
 End Sub
 
 Private Sub Text5_Change()
+On Error Resume Next
 grd1.Visible = False
 Call grd1_clear
 grd1.Visible = True
@@ -1068,10 +1092,12 @@ grd1.Visible = True
 End Sub
 
 Private Sub Text5_Click()
+On Error Resume Next
 Text5_Change
 End Sub
 
 Private Sub Text6_Change()
+On Error Resume Next
 grd1.Visible = False
 Call grd1_clear
 grd1.Visible = True
@@ -1079,10 +1105,12 @@ grd1.Visible = True
 End Sub
 
 Private Sub Text6_Click()
+On Error Resume Next
 Text6_Change
 End Sub
 
 Private Sub Text7_Change()
+On Error Resume Next
 grd1.Visible = False
 Call grd1_clear
 grd1.Visible = True
@@ -1090,10 +1118,12 @@ grd1.Visible = True
 End Sub
 
 Private Sub Text7_Click()
+On Error Resume Next
 Text7_Change
 End Sub
 
 Private Sub Text8_Change()
+On Error Resume Next
 grd1.Visible = False
 Call grd1_clear
 grd1.Visible = True
@@ -1101,10 +1131,12 @@ grd1.Visible = True
 End Sub
 
 Private Sub Text8_Click()
+On Error Resume Next
 Text8_Change
 End Sub
 
 Private Sub Text9_Change()
+On Error Resume Next
 grd1.Visible = False
 Call grd1_clear
 grd1.Visible = True
@@ -1112,5 +1144,6 @@ grd1.Visible = True
 End Sub
 
 Private Sub Text9_Click()
+On Error Resume Next
 Text9_Change
 End Sub
